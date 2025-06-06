@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "ahmed.mo.abubakr@gmail.com",
+      "password": "abuBakr&elKhiouty",
+      "name": "Ahmed Abubakr",
+      "role": "admin",
+      "created_at": "2024-03-20"
+    }
+  ]
+} 

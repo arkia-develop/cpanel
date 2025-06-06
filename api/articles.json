@@ -1,0 +1,24 @@
+{
+    "articles": [
+        {
+            "id": 1,
+            "title": "Sample Article 1",
+            "content": "This is the content of sample article 1",
+            "image": "img\/articles\/article1.jpg",
+            "category": "events",
+            "author": "Admin",
+            "date": "2024-03-20",
+            "status": "draft"
+        },
+        {
+            "id": 2,
+            "title": "Sample Article 2",
+            "content": "This is the content of sample article 2",
+            "image": "img\/articles\/article2.jpg",
+            "category": "Business",
+            "author": "Admin",
+            "date": "2024-03-19",
+            "status": "published"
+        }
+    ]
+}

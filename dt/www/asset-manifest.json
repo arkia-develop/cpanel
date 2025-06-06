@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.917be282.css",
+    "main.js": "/static/js/main.5848f5b3.js",
+    "static/js/453.4a9c2943.chunk.js": "/static/js/453.4a9c2943.chunk.js",
+    "static/media/LogoMin.png": "/static/media/LogoMin.f03d7032cc937f99611e.png",
+    "static/media/resort.jpg": "/static/media/resort.937259d664506a03fd4b.jpg",
+    "static/media/Egyptian.jpg": "/static/media/Egyptian.5e56178333aeaff9cf0a.jpg",
+    "static/media/wadi-rum.jpg": "/static/media/wadi-rum.64a83bdecdc289739447.jpg",
+    "static/media/Nilecruises.jpg": "/static/media/Nilecruises.b83031042ef45f3c0091.jpg",
+    "static/media/Nilecruises2.jpg": "/static/media/Nilecruises2.79057e979a00aa600585.jpg",
+    "static/media/1676131.jpg": "/static/media/1676131.f440345c6f7a21a2ba73.jpg",
+    "static/media/Excursions.jpg": "/static/media/Excursions.0884b392c10f56089e1d.jpg",
+    "static/media/1676137.jpg": "/static/media/1676137.2167d78343136a594cdd.jpg",
+    "static/media/hotel.jpg": "/static/media/hotel.03c5ecff9d3175656118.jpg",
+    "static/media/safari.jpg": "/static/media/safari.630fca0e842224d926df.jpg",
+    "static/media/1676157.jpg": "/static/media/1676157.1ca06f01e4c195040ee2.jpg",
+    "static/media/nile.jpg": "/static/media/nile.72340d90cf509c418f7f.jpg",
+    "static/media/breaks.jpg": "/static/media/breaks.329123093d358646de90.jpg",
+    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/breaks2.jpg": "/static/media/breaks2.54ef3c9433305e2d0e79.jpg",
+    "static/media/transform.jpg": "/static/media/transform.a6176a3593f915548ba1.jpg",
+    "static/media/transform2.jpg": "/static/media/transform2.4f97eb8fd795299e1f3a.jpg",
+    "static/media/safari2.jpg": "/static/media/safari2.7d6b94ec7ba5e0214b99.jpg",
+    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "static/media/HD-Egyptian-Pictures.jpg": "/static/media/HD-Egyptian-Pictures.76d8f72720283de0d2c4.jpg",
+    "static/media/egypt.png": "/static/media/egypt.6771097b55b2fe411ee7.png",
+    "static/media/Excursion.jpg": "/static/media/Excursion.c0122b5895fd0f71c828.jpg",
+    "static/media/italy.png": "/static/media/italy.61c9388400a8995f8ca3.png",
+    "index.html": "/index.html",
+    "main.917be282.css.map": "/static/css/main.917be282.css.map",
+    "main.5848f5b3.js.map": "/static/js/main.5848f5b3.js.map",
+    "453.4a9c2943.chunk.js.map": "/static/js/453.4a9c2943.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.917be282.css",
+    "static/js/main.5848f5b3.js"
+  ]
+}

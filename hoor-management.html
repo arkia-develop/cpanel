@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoor Project Management - Control Panel</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Include sidenav -->
+        <div id="sidenav-container"></div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="container-fluid">
+                <h1 class="mb-4">Hoor Project Management</h1>
+                
+                <!-- Project Overview -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">Project Overview</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card bg-primary text-white">
+                                    <div class="card-body">
+                                        <h5>Articles</h5>
+                                        <h2 id="article-count">Loading...</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-success text-white">
+                                    <div class="card-body">
+                                        <h5>Newsletter Subscribers</h5>
+                                        <h2 id="subscriber-count">Loading...</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-info text-white">
+                                    <div class="card-body">
+                                        <h5>Contact Messages</h5>
+                                        <h2 id="message-count">Loading...</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Management -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">Content Management</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="nav nav-tabs" id="contentTabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="articles-tab" data-toggle="tab" href="#articles" role="tab">Articles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="newsletter-tab" data-toggle="tab" href="#newsletter" role="tab">Newsletter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab">Contact Messages</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content mt-3" id="contentTabsContent">
+                            <!-- Articles Tab -->
+                            <div class="tab-pane fade show active" id="articles" role="tabpanel">
+                                <div class="table-responsive">
+                                    <table class="table" id="articles-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Title</th>
+                                                <th>Date</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Articles will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <!-- Newsletter Tab -->
+                            <div class="tab-pane fade" id="newsletter" role="tabpanel">
+                                <div class="table-responsive">
+                                    <table class="table" id="newsletter-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Email</th>
+                                                <th>Subscribe Date</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Newsletter subscribers will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <!-- Contact Messages Tab -->
+                            <div class="tab-pane fade" id="contact" role="tabpanel">
+                                <div class="table-responsive">
+                                    <table class="table" id="contact-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Date</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Contact messages will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Load sidenav
+        $(document).ready(function() {
+            $("#sidenav-container").load("sidenav.html", function() {
+                // Update active nav item
+                $('.nav-link[href="hoor-management.html"]').addClass('active');
+            });
+        });
+
+        // Function to load articles
+        function loadArticles() {
+            $.getJSON('../hoor/api/articles.json', function(data) {
+                const tbody = $('#articles-table tbody');
+                tbody.empty();
+                
+                data.forEach(article => {
+                    tbody.append(`
+                        <tr>
+                            <td>${article.title}</td>
+                            <td>${article.date}</td>
+                            <td><span class="badge badge-success">Published</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-primary" onclick="editArticle(${article.id})">Edit</button>
+                                <button class="btn btn-sm btn-danger" onclick="deleteArticle(${article.id})">Delete</button>
+                            </td>
+                        </tr>
+                    `);
+                });
+                
+                $('#article-count').text(data.length);
+            });
+        }
+
+        // Function to load newsletter subscribers
+        function loadNewsletterSubscribers() {
+            $.get('../hoor/forms/newsletter.php?action=list', function(data) {
+                const tbody = $('#newsletter-table tbody');
+                tbody.empty();
+                
+                data.forEach(subscriber => {
+                    tbody.append(`
+                        <tr>
+                            <td>${subscriber.email}</td>
+                            <td>${subscriber.date}</td>
+                            <td><span class="badge badge-success">Active</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-danger" onclick="unsubscribe(${subscriber.id})">Unsubscribe</button>
+                            </td>
+                        </tr>
+                    `);
+                });
+                
+                $('#subscriber-count').text(data.length);
+            });
+        }
+
+        // Function to load contact messages
+        function loadContactMessages() {
+            $.get('../hoor/forms/contact.php?action=list', function(data) {
+                const tbody = $('#contact-table tbody');
+                tbody.empty();
+                
+                data.forEach(message => {
+                    tbody.append(`
+                        <tr>
+                            <td>${message.name}</td>
+                            <td>${message.email}</td>
+                            <td>${message.date}</td>
+                            <td><span class="badge badge-primary">New</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info" onclick="viewMessage(${message.id})">View</button>
+                                <button class="btn btn-sm btn-danger" onclick="deleteMessage(${message.id})">Delete</button>
+                            </td>
+                        </tr>
+                    `);
+                });
+                
+                $('#message-count').text(data.length);
+            });
+        }
+
+        // Load all data when page loads
+        $(document).ready(function() {
+            loadArticles();
+            loadNewsletterSubscribers();
+            loadContactMessages();
+        });
+    </script>
+</body>
+</html> 

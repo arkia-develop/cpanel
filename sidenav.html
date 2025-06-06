@@ -1,0 +1,142 @@
+<!--
+  Sidebar Navigation (Offcanvas)
+  This file is loaded dynamically into the dashboard sidebar.
+  It provides navigation links for viewing, adding, and deleting offers/destinations, as well as settings and sign out.
+-->
+<div class="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="sidebarMenuLabel">Company name</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
+      <!-- Main navigation links -->
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <!-- Dashboard home link -->
+          <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
+            <svg class="bi"><use xlink:href="#house-fill"/></svg>
+            Dashboard
+          </a>
+        </li>
+        <!-- Example of how to add more navigation items (commented out) -->
+        <!--
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center gap-2" href="#" onclick="showEdit()">
+            <svg class="bi"><use xlink:href="#cart"/></svg>
+            edit offers
+          </a>
+        </li>
+        -->
+      </ul>
+      <hr class="my-3">
+      <!-- Section: Saved reports (view data) -->
+      <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
+        <span>Saved reports</span>
+        <a class="link-secondary" href="#" aria-label="Add a new report">
+          <svg class="bi"><use xlink:href="#plus-circle"/></svg>
+        </a>
+      </h6>
+      <ul class="nav flex-column mb-auto">
+        <li class="nav-item">
+          <!-- View offers -->
+          <a class="nav-link d-flex align-items-center gap-2" href="#" onclick="loadOffers()">
+            <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
+            see offers
+          </a>
+        </li>
+        <li class="nav-item">
+          <!-- View destinations -->
+          <a class="nav-link d-flex align-items-center gap-2" href="#" onclick="loadDest()">
+            <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
+            see destinations
+          </a>
+        </li>
+        <li class="nav-item">
+          <!-- View messages -->
+          <a class="nav-link d-flex align-items-center gap-2" href="#" onclick="loadMessages()">
+            <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
+            see Messages
+          </a>
+        </li>
+      </ul>
+      <hr class="my-3">
+      <!-- Section: Add reports (add data) -->
+      <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
+        <span>Add reports</span>
+        <a class="link-secondary" href="#" aria-label="Add a new report">
+          <svg class="bi"><use xlink:href="#plus-circle"/></svg>
+        </a>
+      </h6>
+      <ul class="nav flex-column mb-auto">
+        <li class="nav-item">
+          <!-- Add offers -->
+          <a class="nav-link d-flex align-items-center gap-2" href="#" onclick="manageOffers()">
+            <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
+            add offers
+          </a>
+        </li>
+        <li class="nav-item">
+          <!-- Add destinations -->
+          <a class="nav-link d-flex align-items-center gap-2" href="#" onclick="manageDestinations()">
+            <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
+            add destinations
+          </a>
+        </li>
+      </ul>
+      <hr class="my-3">
+      <!-- Section: Delete reports (delete data) -->
+      <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
+        <span>delete reports</span>
+        <a class="link-secondary" href="#" aria-label="Add a new report">
+          <svg class="bi"><use xlink:href="#plus-circle"/></svg>
+        </a>
+      </h6>
+      <ul class="nav flex-column mb-auto">
+        <li class="nav-item">
+          <!-- Delete offers -->
+          <a class="nav-link d-flex align-items-center gap-2" href="#" onclick="showDeleteOffer()">
+            <i class="bi bi-trash"></i>
+            delete offers
+          </a>
+        </li>
+        <li class="nav-item">
+          <!-- Delete destinations -->
+          <a class="nav-link d-flex align-items-center gap-2" href="#" onclick="showDeletDestination()">
+            <i class="bi bi-trash"></i>
+            delete destinations
+          </a>
+        </li>
+      </ul>
+      <hr class="my-3">
+      <!-- Section: Settings and sign out -->
+      <ul class="nav flex-column mb-5"> <!-- mb-auto in before -->
+        <li class="nav-item">
+          <!-- Settings (not implemented) -->
+          <a class="nav-link d-flex align-items-center gap-2" href="#">
+            <svg class="bi"><use xlink:href="#gear-wide-connected"/></svg>
+            Settings
+          </a>
+        </li>
+        <li class="nav-item">
+          <!-- Sign out -->
+          <a class="nav-link d-flex align-items-center gap-2" href="#" onclick="logout()">
+            <svg class="bi"><use xlink:href="#door-closed"/></svg>
+            Sign out
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="theme.html">
+            <i class="fas fa-palette"></i>
+            <span>Theme Settings</span>
+          </a>
+        </li>
+        <!-- Hoor Project Management Section -->
+        <li class="nav-item">
+          <a class="nav-link" href="hoor-management.html">
+            <i class="fas fa-project-diagram"></i>
+            <span>Hoor Project</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>

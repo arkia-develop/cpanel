@@ -1,0 +1,14 @@
+{
+    "services": [
+        {
+            "id": 1749168486,
+            "title": "test12",
+            "category": "packing",
+            "price": 22,
+            "duration": 55,
+            "description": "trial",
+            "status": "active",
+            "date": "2025-06-06"
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+/* Custom styles for sign-in page */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.logo-image {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.logo-image img {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Dark mode support */
+[data-bs-theme="dark"] body {
+  background-color: #212529;
+}
+
+[data-bs-theme="dark"] .form-signin {
+  background-color: #2c3034;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .form-signin {
+    padding: 15px;
+    margin: 0 auto;
+  }
+  
+  .logo-image img {
+    max-width: 150px;
+  }
+} 
