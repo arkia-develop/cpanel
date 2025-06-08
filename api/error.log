@@ -276,3 +276,345 @@ Stack trace:
 #0 {main}
   thrown in C:\xampp\htdocs\cpanel\api\articles.php on line 18
 [08-Jun-2025 03:29:43 Europe/Berlin] PHP Warning:  Undefined array key "image_url" in C:\xampp\htdocs\cpanel\api\portfolio.php on line 151
+[08-Jun-2025 13:53:06 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[08-Jun-2025 13:53:06 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 13:53:06 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$t7XNyeZ.JidgSzPzIBYeaucvEmjJAamB2UC8Bng4I2ZX6l\/oBp7MC",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 13:53:06 Europe/Berlin] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\cpanel\api\auth.php on line 113
+[08-Jun-2025 13:53:06 Europe/Berlin] Login error: User not found for email ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 13:54:31 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[08-Jun-2025 13:54:31 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 13:54:31 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$t7XNyeZ.JidgSzPzIBYeaucvEmjJAamB2UC8Bng4I2ZX6l\/oBp7MC",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 13:54:31 Europe/Berlin] Password verified successfully for user: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 13:54:31 Europe/Berlin] Generated token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNLiBBYnViYWtyIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5NDcwMDcxfQ.lXX-J1Y-OoH83EQj97bzMFkmc9yHT8UW79Q-5RyTcJY
+[08-Jun-2025 15:24:21 Europe/Berlin] Token validation error: Invalid token
+[08-Jun-2025 15:24:23 Europe/Berlin] Token validation error: Invalid token
+[08-Jun-2025 15:24:23 Europe/Berlin] Token validation error: Invalid token
+[08-Jun-2025 15:24:24 Europe/Berlin] Token validation error: Invalid token
+[08-Jun-2025 15:24:24 Europe/Berlin] Token validation error: Invalid token
+[08-Jun-2025 15:24:25 Europe/Berlin] Token validation error: Invalid token
+[08-Jun-2025 15:24:29 Europe/Berlin] Token validation error: Invalid token
+[08-Jun-2025 15:24:31 Europe/Berlin] Token validation error: Invalid token
+[08-Jun-2025 15:24:32 Europe/Berlin] Token validation error: Invalid token
+[08-Jun-2025 15:24:33 Europe/Berlin] Token validation error: Invalid token
+[08-Jun-2025 15:29:19 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[08-Jun-2025 15:29:19 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:29:19 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 15:29:19 Europe/Berlin] Login error: Password verification failed for email ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:29:39 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"حشسسصخقي"}
+[08-Jun-2025 15:29:39 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:29:39 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 15:29:39 Europe/Berlin] Login error: Password verification failed for email ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:29:56 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"password"}
+[08-Jun-2025 15:29:56 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:29:56 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 15:29:56 Europe/Berlin] Password verified successfully for user: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:29:56 Europe/Berlin] Generated token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDkzODkzOTYsImV4cCI6MTc0OTQ3NTc5NiwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNLiBBYnViYWtyIiwicm9sZSI6ImFkbWluIn19.Vgfl3APhCRzYyjeL-GFoH7uMgwoXMNOtKwymDhcMZH4
+[08-Jun-2025 15:29:57 Europe/Berlin] Dashboard API Error: No authorization header
+[08-Jun-2025 15:30:21 Europe/Berlin] Dashboard API Error: No authorization header
+[08-Jun-2025 15:30:24 Europe/Berlin] Dashboard API Error: No authorization header
+[08-Jun-2025 15:30:26 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"password"}
+[08-Jun-2025 15:30:26 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:30:26 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$PnRqOpOnHCwhaJ3F2v7JPuOOsxKdNEGyA8sZQzxFQyWPRodf36IiO",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 15:30:26 Europe/Berlin] Password verified successfully for user: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:30:26 Europe/Berlin] Generated token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDkzODk0MjYsImV4cCI6MTc0OTQ3NTgyNiwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNLiBBYnViYWtyIiwicm9sZSI6ImFkbWluIn19.bVT5NjAbvNqg08CG1OGsMQ8iJq0QwBD42v15AtytRKQ
+[08-Jun-2025 15:30:26 Europe/Berlin] Dashboard API Error: No authorization header
+[08-Jun-2025 15:30:29 Europe/Berlin] Dashboard API Error: No authorization header
+[08-Jun-2025 15:31:02 Europe/Berlin] Dashboard API Error: No authorization header
+[08-Jun-2025 15:31:03 Europe/Berlin] Dashboard API Error: No authorization header
+[08-Jun-2025 15:31:04 Europe/Berlin] Dashboard API Error: No authorization header
+[08-Jun-2025 15:34:01 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"password"}
+[08-Jun-2025 15:34:01 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:34:01 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$PnRqOpOnHCwhaJ3F2v7JPuOOsxKdNEGyA8sZQzxFQyWPRodf36IiO",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 15:34:01 Europe/Berlin] Password verified successfully for user: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:34:01 Europe/Berlin] Generated token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDkzODk2NDEsImV4cCI6MTc0OTQ3NjA0MSwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNLiBBYnViYWtyIiwicm9sZSI6ImFkbWluIn19.A-eeQkax5GR7hAAXNpQNrO_y1j7tcI0s-qiptKqSy7E
+[08-Jun-2025 15:35:33 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"password"}
+[08-Jun-2025 15:35:33 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:35:33 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$PnRqOpOnHCwhaJ3F2v7JPuOOsxKdNEGyA8sZQzxFQyWPRodf36IiO",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 15:35:34 Europe/Berlin] Password verified successfully for user: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:35:34 Europe/Berlin] Generated token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDkzODk3MzQsImV4cCI6MTc0OTQ3NjEzNCwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNLiBBYnViYWtyIiwicm9sZSI6ImFkbWluIn19.FHeXvvjvKVfNLtKFLwT5aHzBtSYC0CecKffWOSSM3PI
+[08-Jun-2025 15:35:38 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[08-Jun-2025 15:35:38 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:35:38 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$PnRqOpOnHCwhaJ3F2v7JPuOOsxKdNEGyA8sZQzxFQyWPRodf36IiO",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 15:35:38 Europe/Berlin] Login error: Password verification failed for email ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:35:40 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[08-Jun-2025 15:35:40 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:35:40 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$PnRqOpOnHCwhaJ3F2v7JPuOOsxKdNEGyA8sZQzxFQyWPRodf36IiO",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 15:35:40 Europe/Berlin] Login error: Password verification failed for email ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:36:15 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"password"}
+[08-Jun-2025 15:36:15 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:36:15 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$PnRqOpOnHCwhaJ3F2v7JPuOOsxKdNEGyA8sZQzxFQyWPRodf36IiO",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 15:36:15 Europe/Berlin] Password verified successfully for user: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:36:15 Europe/Berlin] Generated token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDkzODk3NzUsImV4cCI6MTc0OTQ3NjE3NSwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNLiBBYnViYWtyIiwicm9sZSI6ImFkbWluIn19.kEherzj-Vphxg5WEJRA3BSxAlFXxDOjDbx0ZrniblTk
+[08-Jun-2025 15:36:26 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"password"}
+[08-Jun-2025 15:36:26 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:36:26 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$QwQwQwQwQwQwQwQwQwQwQeQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQ",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 15:36:26 Europe/Berlin] Login error: Password verification failed for email ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:36:29 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[08-Jun-2025 15:36:29 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:36:29 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$QwQwQwQwQwQwQwQwQwQwQeQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQ",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 15:36:29 Europe/Berlin] Login error: Password verification failed for email ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:36:40 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[08-Jun-2025 15:36:40 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:36:40 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$QwQwQwQwQwQwQwQwQwQwQeQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQ",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 15:36:40 Europe/Berlin] Login error: Password verification failed for email ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:36:49 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[08-Jun-2025 15:36:49 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:36:49 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$QwQwQwQwQwQwQwQwQwQwQeQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQ",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 15:36:49 Europe/Berlin] Login error: Password verification failed for email ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:36:52 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"password"}
+[08-Jun-2025 15:36:52 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:36:52 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$QwQwQwQwQwQwQwQwQwQwQeQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQ",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 15:36:52 Europe/Berlin] Login error: Password verification failed for email ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:46:58 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[08-Jun-2025 15:46:58 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:46:58 Europe/Berlin] Received password: abuBakr&elKhiouty
+[08-Jun-2025 15:46:58 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$QwQwQwQwQwQwQwQwQwQwQeQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQ",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 15:46:58 Europe/Berlin] Checking user: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:46:58 Europe/Berlin] User found: {"id":1,"name":"Ahmed M. Abubakr","email":"ahmed.mo.abubakr@gmail.com","password":"$2y$10$QwQwQwQwQwQwQwQwQwQwQeQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQ","role":"admin","created_at":"2024-03-20 10:00:00","updated_at":"2024-03-20 10:00:00"}
+[08-Jun-2025 15:46:58 Europe/Berlin] Password verify result: false
+[08-Jun-2025 15:46:58 Europe/Berlin] Login error: Password verification failed for email ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:47:06 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"password"}
+[08-Jun-2025 15:47:06 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:47:06 Europe/Berlin] Received password: password
+[08-Jun-2025 15:47:06 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$QwQwQwQwQwQwQwQwQwQwQeQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQ",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 15:47:06 Europe/Berlin] Checking user: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:47:06 Europe/Berlin] User found: {"id":1,"name":"Ahmed M. Abubakr","email":"ahmed.mo.abubakr@gmail.com","password":"$2y$10$QwQwQwQwQwQwQwQwQwQwQeQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQ","role":"admin","created_at":"2024-03-20 10:00:00","updated_at":"2024-03-20 10:00:00"}
+[08-Jun-2025 15:47:06 Europe/Berlin] Password verify result: false
+[08-Jun-2025 15:47:06 Europe/Berlin] Login error: Password verification failed for email ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:48:21 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[08-Jun-2025 15:48:21 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:48:21 Europe/Berlin] Received password: abuBakr&elKhiouty
+[08-Jun-2025 15:48:21 Europe/Berlin] Users database content: {
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$SP0eiGPiHJZwwYM1A0eGaOmEqxdpMjQMjkpKQ0.RZ2FAVS.P9Ri\/i",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}
+[08-Jun-2025 15:48:21 Europe/Berlin] Checking user: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:48:21 Europe/Berlin] User found: {"id":1,"name":"Ahmed M. Abubakr","email":"ahmed.mo.abubakr@gmail.com","password":"$2y$10$SP0eiGPiHJZwwYM1A0eGaOmEqxdpMjQMjkpKQ0.RZ2FAVS.P9Ri\/i","role":"admin","created_at":"2024-03-20 10:00:00","updated_at":"2024-03-20 10:00:00"}
+[08-Jun-2025 15:48:21 Europe/Berlin] Password verify result: true
+[08-Jun-2025 15:48:21 Europe/Berlin] Password verified successfully for user: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 15:48:21 Europe/Berlin] Generated token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDkzOTA1MDEsImV4cCI6MTc0OTQ3NjkwMSwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNLiBBYnViYWtyIiwicm9sZSI6ImFkbWluIn19.B8Oe48u4uFd63B6fFNT92jH_flmsnh614ZTkx8h9mTs

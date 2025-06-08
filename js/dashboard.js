@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (logoutBtn) {
         logoutBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            logout();
+            handleLogout();
         });
     }
 });
@@ -644,13 +644,6 @@ window.loadContent = loadContent;
 window.loadDashboard = loadDashboard;
 window.loadPortfolio = loadPortfolio;
 window.loadUsers = loadUsers;
-
-// Helper function to get auth headers
-function getAuthHeaders() {
-    return {
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-    };
-}
 
 // Check if user is authenticated
 function isAuthenticated() {

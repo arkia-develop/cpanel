@@ -16,82 +16,63 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-// Check authentication
+// Check if authorization header exists
 $headers = getallheaders();
 if (!isset($headers['Authorization'])) {
-    error_log('Dashboard API Error: Missing or invalid Authorization header');
+    error_log('Dashboard API Error: No authorization header');
     http_response_code(401);
-    echo json_encode(['success' => false, 'message' => 'Missing or invalid Authorization header']);
+    echo json_encode(['success' => false, 'message' => 'No authorization header']);
     exit;
 }
 
-$auth_header = $headers['Authorization'];
-if (!preg_match('/Bearer\s+(.*)$/i', $auth_header, $matches)) {
-    error_log('Dashboard API Error: Invalid Authorization header format');
-    http_response_code(401);
-    echo json_encode(['success' => false, 'message' => 'Invalid Authorization header format']);
-    exit;
-}
+// Get the token from the authorization header
+$token = str_replace('Bearer ', '', $headers['Authorization']);
 
-$jwt = $matches[1];
+// Verify the token
 $jwtHandler = new JWTHandler();
-
-try {
-    $decoded = $jwtHandler->validateToken($jwt);
-    if (!$decoded) {
-        error_log('Token validation error: Invalid token');
-        http_response_code(401);
-        echo json_encode(['success' => false, 'message' => 'Invalid or expired token']);
-        exit;
-    }
-} catch (Exception $e) {
-    error_log('Token validation error: ' . $e->getMessage());
+$decoded = $jwtHandler->validateToken($token);
+if (!$decoded) {
+    error_log('Dashboard API Error: Invalid token');
     http_response_code(401);
-    echo json_encode(['success' => false, 'message' => 'Invalid or expired token']);
+    echo json_encode(['success' => false, 'message' => 'Invalid token']);
     exit;
 }
 
-// Handle GET request
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    try {
-        // Get counts
-        $counts = [
-            'articles' => countItems('articles.json'),
-            'services' => countItems('services.json'),
-            'portfolio' => countItems('portfolio.json'),
-            'users' => countItems('users.json')
-        ];
-
-        // Get recent items
-        $recent = [
-            'articles' => getRecentItems('articles.json', 3),
-            'services' => getRecentItems('services.json', 3),
-            'portfolio' => getRecentItems('portfolio.json', 3)
-        ];
-
-        // Return success response
-        echo json_encode([
-            'success' => true,
-            'data' => [
-                'counts' => $counts,
-                'recent' => $recent
-            ]
-        ]);
-    } catch (Exception $e) {
-        error_log('Dashboard error: ' . $e->getMessage());
-        http_response_code(500);
-        echo json_encode([
-            'success' => false,
-            'message' => 'Failed to load dashboard data'
-        ]);
-    }
-} else {
+// Only allow GET requests
+if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+    error_log('Dashboard API Error: Method not allowed');
     http_response_code(405);
-    echo json_encode([
-        'success' => false,
-        'message' => 'Method not allowed'
-    ]);
+    echo json_encode(['success' => false, 'message' => 'Method not allowed']);
+    exit;
 }
+
+// Get counts
+$articlesCount = countItems('articles.json');
+$servicesCount = countItems('services.json');
+$portfolioCount = countItems('portfolio.json');
+$usersCount = countItems('users.json');
+
+// Get recent items
+$recentArticles = getRecentItems('articles.json');
+$recentServices = getRecentItems('services.json');
+
+// Return the dashboard data
+echo json_encode([
+    'success' => true,
+    'message' => 'Dashboard data loaded successfully',
+    'data' => [
+        'counts' => [
+            'articles' => $articlesCount,
+            'services' => $servicesCount,
+            'portfolio' => $portfolioCount,
+            'users' => $usersCount
+        ],
+        'recent' => [
+            'articles' => $recentArticles,
+            'services' => $recentServices
+        ]
+    ]
+]);
 
 // Helper function to count items in a JSON file
 function countItems($filename) {
@@ -103,7 +84,7 @@ function countItems($filename) {
 }
 
 // Helper function to get recent items from a JSON file
-function getRecentItems($filename, $limit = 3) {
+function getRecentItems($filename, $limit = 5) {
     if (!file_exists($filename)) {
         return [];
     }
@@ -111,12 +92,9 @@ function getRecentItems($filename, $limit = 3) {
     if (!is_array($data)) {
         return [];
     }
-    
     // Sort by created_at in descending order
     usort($data, function($a, $b) {
         return strtotime($b['created_at']) - strtotime($a['created_at']);
     });
-    
-    // Return limited items
     return array_slice($data, 0, $limit);
 } 

@@ -1,0 +1,195 @@
+# JavaScript Functions Documentation
+
+## auth.js
+
+### Authentication Functions
+
+1. `handleLogin(e)`
+   - Purpose: Handles user login process
+   - Parameters: Event object from form submission
+   - Flow:
+     1. Prevents default form submission
+     2. Shows loading spinner
+     3. Gets email and password from form
+     4. Sends POST request to api/auth.php
+     5. Handles response and stores token
+     6. Redirects to dashboard on success
+   - Dependencies: 
+     - Requires login form in HTML
+     - Requires loading spinner element
+     - Requires error message element
+
+2. `isAuthenticated()`
+   - Purpose: Checks if user is logged in
+   - Returns: Boolean indicating authentication status
+   - Dependencies: localStorage for token storage
+
+3. `getAuthHeaders()`
+   - Purpose: Generates headers for authenticated requests
+   - Returns: Object with Authorization and Content-Type headers
+   - Dependencies: localStorage for token storage
+
+4. `handleLogout()`
+   - Purpose: Handles user logout
+   - Flow:
+     1. Removes token from localStorage
+     2. Removes user data from localStorage
+     3. Redirects to login page
+   - Dependencies: localStorage
+
+5. `checkAuth()`
+   - Purpose: Verifies authentication status
+   - Returns: Promise resolving to boolean
+   - Flow:
+     1. Checks token existence
+     2. Redirects to login if not authenticated
+   - Dependencies: isAuthenticated()
+
+6. `handleAuthState()`
+   - Purpose: Manages UI elements based on auth state
+   - Flow:
+     1. Checks authentication
+     2. Shows/hides elements based on auth state
+     3. Updates user info in UI
+   - Dependencies: checkAuth()
+
+## dashboard.js
+
+### Dashboard Management Functions
+
+1. `loadDashboard()`
+   - Purpose: Initializes dashboard
+   - Flow:
+     1. Checks authentication
+     2. Loads statistics
+     3. Sets up event listeners
+     4. Loads initial content
+   - Dependencies: checkAuth()
+
+2. `handleNavigation()`
+   - Purpose: Manages sidebar navigation
+   - Parameters: Event object from click
+   - Flow:
+     1. Gets target content from data attribute
+     2. Loads corresponding content
+     3. Updates active state
+   - Dependencies: loadContent()
+
+3. `loadContent(contentType)`
+   - Purpose: Loads different content sections
+   - Parameters: String indicating content type
+   - Flow:
+     1. Fetches content from server
+     2. Updates main content area
+     3. Initializes content-specific features
+   - Dependencies: getAuthHeaders()
+
+## articles.js
+
+### Article Management Functions
+
+1. `loadArticles()`
+   - Purpose: Loads articles table
+   - Flow:
+     1. Fetches articles from server
+     2. Initializes DataTable
+     3. Sets up event handlers
+   - Dependencies: getAuthHeaders()
+
+2. `handleArticleSubmit(e)`
+   - Purpose: Handles article form submission
+   - Parameters: Event object from form
+   - Flow:
+     1. Validates form data
+     2. Sends to server
+     3. Updates table on success
+   - Dependencies: getAuthHeaders()
+
+3. `deleteArticle(id)`
+   - Purpose: Deletes an article
+   - Parameters: Article ID
+   - Flow:
+     1. Confirms deletion
+     2. Sends delete request
+     3. Updates table on success
+   - Dependencies: getAuthHeaders()
+
+## services.js
+
+### Service Management Functions
+
+1. `loadServices()`
+   - Purpose: Loads services table
+   - Flow:
+     1. Fetches services from server
+     2. Initializes DataTable
+     3. Sets up event handlers
+   - Dependencies: getAuthHeaders()
+
+2. `handleServiceSubmit(e)`
+   - Purpose: Handles service form submission
+   - Parameters: Event object from form
+   - Flow:
+     1. Validates form data
+     2. Sends to server
+     3. Updates table on success
+   - Dependencies: getAuthHeaders()
+
+3. `deleteService(id)`
+   - Purpose: Deletes a service
+   - Parameters: Service ID
+   - Flow:
+     1. Confirms deletion
+     2. Sends delete request
+     3. Updates table on success
+   - Dependencies: getAuthHeaders()
+
+## Function Relationships
+
+### Authentication Flow
+1. User submits login form
+2. `handleLogin()` processes submission
+3. On success, stores token
+4. `isAuthenticated()` becomes true
+5. `handleAuthState()` updates UI
+6. `checkAuth()` protects routes
+
+### Dashboard Flow
+1. `loadDashboard()` initializes
+2. `handleNavigation()` manages content
+3. `loadContent()` fetches data
+4. Content-specific handlers manage features
+
+### Data Management Flow
+1. Content loaded via respective load function
+2. CRUD operations handled by specific handlers
+3. All requests use `getAuthHeaders()`
+4. UI updates after successful operations
+
+### Error Handling Flow
+1. All async operations use try-catch
+2. Errors displayed to user
+3. Loading states managed
+4. Authentication errors handled
+
+## Best Practices
+
+1. Function Organization:
+   - Related functions grouped
+   - Clear naming conventions
+   - Single responsibility principle
+
+2. Error Handling:
+   - Consistent error handling
+   - User-friendly messages
+   - Loading state management
+
+3. Security:
+   - All requests authenticated
+   - Input validation
+   - XSS prevention
+
+4. Performance:
+   - Efficient DOM updates
+   - Proper event delegation
+   - Resource cleanup 

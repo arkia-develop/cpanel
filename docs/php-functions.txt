@@ -1,0 +1,247 @@
+# PHP Backend Functions Documentation
+
+## auth.php
+
+### Authentication Functions
+
+1. `checkAuth()`
+   - Purpose: Validates JWT token
+   - Flow:
+     1. Gets Authorization header
+     2. Extracts JWT token
+     3. Validates token using JWTHandler
+     4. Returns decoded user data if valid
+   - Dependencies: JWTHandler class
+   - Error Handling:
+     - 401 if no/invalid token
+     - 401 if token expired
+     - 500 for server errors
+
+2. Login Handler
+   - Purpose: Processes login requests
+   - Flow:
+     1. Validates input data
+     2. Checks user credentials
+     3. Generates JWT token
+     4. Returns user data and token
+   - Dependencies: 
+     - users.json
+     - JWTHandler class
+   - Error Handling:
+     - 400 for invalid input
+     - 401 for invalid credentials
+     - 500 for server errors
+
+## JWTHandler Class (jwt.php)
+
+### Token Management Functions
+
+1. `generateToken($data)`
+   - Purpose: Creates new JWT token
+   - Parameters: Array of user data
+   - Returns: JWT token string
+   - Flow:
+     1. Creates token payload
+     2. Signs with secret key
+     3. Returns encoded token
+   - Dependencies: JWT library
+
+2. `validateToken($token)`
+   - Purpose: Validates JWT token
+   - Parameters: JWT token string
+   - Returns: Decoded user data if valid
+   - Flow:
+     1. Verifies token signature
+     2. Checks expiration
+     3. Returns payload data
+   - Dependencies: JWT library
+   - Error Handling:
+     - Throws exception if invalid
+     - Throws exception if expired
+
+## API Endpoints
+
+### Articles API
+
+1. `getArticles()`
+   - Purpose: Retrieves all articles
+   - Authentication: Required
+   - Returns: Array of articles
+   - Error Handling:
+     - 401 if not authenticated
+     - 500 for server errors
+
+2. `createArticle($data)`
+   - Purpose: Creates new article
+   - Parameters: Article data
+   - Authentication: Required
+   - Returns: Created article
+   - Error Handling:
+     - 400 for invalid data
+     - 401 if not authenticated
+     - 500 for server errors
+
+3. `updateArticle($id, $data)`
+   - Purpose: Updates existing article
+   - Parameters: 
+     - Article ID
+     - Update data
+   - Authentication: Required
+   - Returns: Updated article
+   - Error Handling:
+     - 400 for invalid data
+     - 401 if not authenticated
+     - 404 if article not found
+     - 500 for server errors
+
+4. `deleteArticle($id)`
+   - Purpose: Deletes article
+   - Parameters: Article ID
+   - Authentication: Required
+   - Returns: Success message
+   - Error Handling:
+     - 401 if not authenticated
+     - 404 if article not found
+     - 500 for server errors
+
+### Services API
+
+1. `getServices()`
+   - Purpose: Retrieves all services
+   - Authentication: Required
+   - Returns: Array of services
+   - Error Handling:
+     - 401 if not authenticated
+     - 500 for server errors
+
+2. `createService($data)`
+   - Purpose: Creates new service
+   - Parameters: Service data
+   - Authentication: Required
+   - Returns: Created service
+   - Error Handling:
+     - 400 for invalid data
+     - 401 if not authenticated
+     - 500 for server errors
+
+3. `updateService($id, $data)`
+   - Purpose: Updates existing service
+   - Parameters:
+     - Service ID
+     - Update data
+   - Authentication: Required
+   - Returns: Updated service
+   - Error Handling:
+     - 400 for invalid data
+     - 401 if not authenticated
+     - 404 if service not found
+     - 500 for server errors
+
+4. `deleteService($id)`
+   - Purpose: Deletes service
+   - Parameters: Service ID
+   - Authentication: Required
+   - Returns: Success message
+   - Error Handling:
+     - 401 if not authenticated
+     - 404 if service not found
+     - 500 for server errors
+
+## Data Storage
+
+### JSON File Structure
+
+1. users.json
+   ```json
+   {
+     "users": [
+       {
+         "id": number,
+         "name": string,
+         "email": string,
+         "password": string (hashed),
+         "role": string,
+         "created_at": string,
+         "updated_at": string
+       }
+     ]
+   }
+   ```
+
+2. articles.json
+   ```json
+   {
+     "articles": [
+       {
+         "id": number,
+         "title": string,
+         "content": string,
+         "category": string,
+         "author": string,
+         "status": string,
+         "created_at": string,
+         "updated_at": string
+       }
+     ]
+   }
+   ```
+
+3. services.json
+   ```json
+   {
+     "services": [
+       {
+         "id": number,
+         "name": string,
+         "description": string,
+         "status": string,
+         "created_at": string,
+         "updated_at": string
+       }
+     ]
+   }
+   ```
+
+## Security Measures
+
+1. Authentication
+   - JWT token validation
+   - Password hashing
+   - Token expiration
+
+2. Input Validation
+   - Data type checking
+   - Required field validation
+   - Sanitization
+
+3. Error Handling
+   - Consistent error responses
+   - Secure error messages
+   - Logging
+
+4. File Operations
+   - Safe file reading/writing
+   - File locking
+   - Backup handling
+
+## Best Practices
+
+1. Code Organization
+   - Modular structure
+   - Clear function names
+   - Consistent formatting
+
+2. Error Handling
+   - Try-catch blocks
+   - Proper HTTP status codes
+   - Informative error messages
+
+3. Security
+   - Input validation
+   - Authentication checks
+   - Secure file operations
+
+4. Performance
+   - Efficient file operations
+   - Proper error logging
+   - Resource cleanup 
