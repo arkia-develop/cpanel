@@ -1,12 +1,13 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "email": "ahmed.mo.abubakr@gmail.com",
-      "password": "abuBakr&elKhiouty",
-      "name": "Ahmed Abubakr",
-      "role": "admin",
-      "created_at": "2024-03-20"
-    }
-  ]
-} 
+    "users": [
+        {
+            "id": 1,
+            "name": "Ahmed M. Abubakr",
+            "email": "ahmed.mo.abubakr@gmail.com",
+            "password": "$2y$10$t7XNyeZ.JidgSzPzIBYeaucvEmjJAamB2UC8Bng4I2ZX6l\/oBp7MC",
+            "role": "admin",
+            "created_at": "2024-03-20 10:00:00",
+            "updated_at": "2024-03-20 10:00:00"
+        }
+    ]
+}

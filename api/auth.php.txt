@@ -1,0 +1,51 @@
+AUTH.PHP Documentation
+=====================
+
+Purpose:
+--------
+This file handles user authentication, including login functionality and JWT token management.
+
+Key Functions:
+-------------
+1. Login Authentication
+   - Validates user credentials against users.json
+   - Generates JWT token upon successful login
+   - Returns user data and token
+
+2. Security Features
+   - Password hashing verification
+   - JWT token generation and validation
+   - CORS headers for API access
+   - Error handling and logging
+
+Connections:
+-----------
+- Connected to:
+  * users.json: Stores user credentials
+  * jwt.php: Handles token generation and validation
+  * auth.js: Frontend authentication handling
+  * index.html: Login form and UI
+
+Data Flow:
+---------
+1. Frontend (auth.js) sends login request
+2. auth.php validates credentials
+3. If valid, generates JWT token
+4. Returns token and user data to frontend
+5. Frontend stores token in localStorage
+
+Error Handling:
+--------------
+- Invalid credentials
+- Missing required fields
+- Server errors
+- File access issues
+- Token generation failures
+
+Security Measures:
+----------------
+- Password hashing
+- JWT token encryption
+- CORS protection
+- Input validation
+- Error logging 

@@ -1,0 +1,131 @@
+Dashboard JavaScript (dashboard.js)
+================================
+
+This file handles the main dashboard functionality and navigation.
+
+Key Functions:
+-------------
+
+1. loadDashboard()
+   - Fetches dashboard statistics
+   - Displays recent items from all sections
+   - Handles error cases
+   - Updates UI with statistics
+
+2. loadSection(section)
+   - Main navigation function
+   - Loads different sections (articles, services, portfolio, users)
+   - Handles section-specific functionality
+   - Updates active navigation state
+
+3. handleLogout()
+   - Handles user logout
+   - Clears session data
+   - Redirects to login page
+   - Error handling
+
+4. updateActiveNav()
+   - Updates navigation active states
+   - Handles section highlighting
+   - Manages navigation UI
+
+5. showError(message)
+   - Displays error messages
+   - Handles error UI
+   - Provides user feedback
+
+API Integration:
+--------------
+- Fetches dashboard statistics
+- Handles authentication state
+- Manages session data
+- Error handling for API responses
+
+UI Components:
+------------
+- Navigation menu
+- Statistics cards
+- Recent items lists
+- Error messages
+- Loading indicators
+
+Error Handling:
+-------------
+- API error responses
+- Network issues
+- Session management
+- User feedback
+- Console logging
+
+Security Features:
+----------------
+- Session validation
+- Authentication checks
+- Secure logout
+- Token management
+
+Purpose:
+--------
+Main dashboard controller handling content loading, navigation, and overall dashboard functionality.
+
+Key Functions:
+-------------
+1. Dashboard Initialization
+   - Authentication check
+   - Navigation setup
+   - Content loading
+   - Event listeners
+
+2. Content Management
+   - Dynamic content loading
+   - Table initialization
+   - Modal handling
+   - Data display
+
+3. Navigation
+   - Section switching
+   - Content updates
+   - State management
+   - URL handling
+
+Connections:
+-----------
+- Connected to:
+  * articles.js: Article management
+  * services.js: Service management
+  * portfolio.js: Portfolio management
+  * auth.js: Authentication state
+  * dashboard.html: Main UI structure
+
+Data Flow:
+---------
+1. User navigates to section
+2. Dashboard loads appropriate content
+3. Initializes required components
+4. Loads and displays data
+5. Sets up event handlers
+
+UI Components:
+------------
+- Navigation sidebar
+- Content area
+- Data tables
+- Modals
+- Loading indicators
+
+Features:
+--------
+- Dynamic content loading
+- Responsive design
+- Data table integration
+- Modal management
+- Error handling
+- Authentication checks
+
+Security:
+--------
+- Session validation
+- Token verification
+- Access control
+- Error handling
+- Data sanitization 

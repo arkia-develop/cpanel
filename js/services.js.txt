@@ -1,0 +1,135 @@
+Services Management JavaScript (services.js)
+=========================================
+
+This file handles all services-related functionality in the admin dashboard.
+
+Key Functions:
+-------------
+
+1. loadServices()
+   - Fetches services from the API
+   - Displays services in a DataTable
+   - Handles error cases and displays appropriate messages
+   - Includes add/edit/delete buttons for each service
+
+2. editService(id)
+   - Fetches a specific service by ID
+   - Populates the edit modal with service data
+   - Handles form population and modal display
+   - Error handling for API responses
+
+3. handleEditService(e)
+   - Handles the edit form submission
+   - Sends PUT request to API with service data
+   - ID is sent in request body
+   - Handles success/error cases with user feedback
+
+4. deleteService(id)
+   - Confirms deletion with user
+   - Sends DELETE request to API
+   - Reloads services list on success
+   - Error handling with user feedback
+
+5. showAddServiceModal()
+   - Creates and displays add service modal
+   - Handles form initialization
+   - Modal management
+
+6. handleAddService(e)
+   - Handles the add form submission
+   - Sends POST request to API
+   - Handles success/error cases
+   - Reloads services list on success
+
+API Integration:
+--------------
+- Uses RESTful API endpoints
+- Handles authentication via JWT tokens
+- Proper error handling for API responses
+- Consistent data formatting
+
+UI Components:
+------------
+- DataTable for service listing
+- Modal forms for add/edit
+- Status indicators
+- Action buttons for each service
+
+Error Handling:
+-------------
+- API error responses
+- Network issues
+- Invalid data
+- User feedback via alerts
+- Console logging for debugging
+
+SERVICES.JS Documentation
+=======================
+
+Purpose:
+--------
+Manages service-related functionality including CRUD operations, display, and interaction.
+
+Key Functions:
+-------------
+1. Service Management
+   - Load services
+   - Add new services
+   - Edit existing services
+   - Delete services
+   - View service details
+
+2. Data Handling
+   - API communication
+   - Data formatting
+   - Table updates
+   - Modal management
+
+Connections:
+-----------
+- Connected to:
+  * services.php: Backend API
+  * dashboard.js: Main controller
+  * dashboard.html: UI elements
+  * DataTables: Table functionality
+
+Data Flow:
+---------
+1. Load services from API
+2. Display in DataTable
+3. Handle CRUD operations
+4. Update UI accordingly
+5. Manage modals
+
+UI Components:
+------------
+- Services table
+- Add/Edit modals
+- View modal
+- Action buttons
+- Status indicators
+
+Features:
+--------
+- CRUD operations
+- Data validation
+- Error handling
+- Status management
+- Date formatting
+- HTML content handling
+
+Error Handling:
+--------------
+- API errors
+- Validation errors
+- Display errors
+- Network issues
+- Data format issues
+
+Security:
+--------
+- Token validation
+- Input sanitization
+- Error logging
+- Access control
+- Data validation 

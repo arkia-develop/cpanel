@@ -1,0 +1,72 @@
+Users Management JavaScript (users.js)
+===================================
+
+This file handles all users-related functionality in the admin dashboard.
+
+Key Functions:
+-------------
+
+1. loadUsers()
+   - Fetches users from the API
+   - Displays users in a DataTable
+   - Handles error cases and displays appropriate messages
+   - Includes add/edit/delete buttons for each user
+
+2. editUser(id)
+   - Fetches a specific user by ID
+   - Populates the edit modal with user data
+   - Handles form population and modal display
+   - Error handling for API responses
+
+3. handleEditUser(e)
+   - Handles the edit form submission
+   - Sends PUT request to API with user data
+   - ID is sent in request body
+   - Handles success/error cases with user feedback
+
+4. deleteUser(id)
+   - Confirms deletion with user
+   - Sends DELETE request to API
+   - Reloads users list on success
+   - Error handling with user feedback
+
+5. showAddUserModal()
+   - Creates and displays add user modal
+   - Handles form initialization
+   - Modal management
+
+6. handleAddUser(e)
+   - Handles the add form submission
+   - Sends POST request to API
+   - Handles success/error cases
+   - Reloads users list on success
+
+API Integration:
+--------------
+- Uses RESTful API endpoints
+- Handles authentication via JWT tokens
+- Proper error handling for API responses
+- Consistent data formatting
+
+UI Components:
+------------
+- DataTable for user listing
+- Modal forms for add/edit
+- Role selection
+- Status indicators
+- Action buttons for each user
+
+Error Handling:
+-------------
+- API error responses
+- Network issues
+- Invalid data
+- User feedback via alerts
+- Console logging for debugging
+
+Security Features:
+----------------
+- Password hashing
+- Role-based access control
+- Input validation
+- Session management 

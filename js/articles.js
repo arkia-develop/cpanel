@@ -2,211 +2,325 @@
 let articlesTable;
 
 // Function to load articles
-function loadArticles() {
-    const tbody = document.querySelector('#articlesTable tbody');
-    if (!tbody) return;
-
-    // Sample data - replace with API call in production
-    const articles = [
-        {
-            id: 1,
-            title: 'Getting Started with Web Development',
-            category: 'Web Development',
-            author: 'John Doe',
-            content: 'This is a sample article content.',
-            status: 'published'
-        },
-        {
-            id: 2,
-            title: 'Advanced PHP Techniques',
-            category: 'Programming',
-            author: 'Jane Smith',
-            content: 'This is another sample article content.',
-            status: 'draft'
-        },
-        {
-            id: 3,
-            title: 'Database Design Best Practices',
-            category: 'Database',
-            author: 'Mike Johnson',
-            content: 'This is a third sample article content.',
-            status: 'published'
+async function loadArticles() {
+    try {
+        const response = await fetch('api/articles.php', {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error('Failed to load articles');
         }
-    ];
+        
+        const data = await response.json();
+        if (!data.success) {
+            throw new Error(data.message || 'Failed to load articles');
+        }
+        
+        const articlesTable = document.getElementById('articles-table');
+        if (!articlesTable) {
+            console.error('Articles table not found');
+            return;
+        }
+        
+        // Clear existing rows
+        const tbody = articlesTable.querySelector('tbody');
+        if (!tbody) {
+            console.error('Table body not found');
+            return;
+        }
+        tbody.innerHTML = '';
+        
+        // Add new rows
+        if (Array.isArray(data.items)) {
+            data.items.forEach(article => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${article.title}</td>
+                    <td>${article.category}</td>
+                    <td>${article.author}</td>
+                    <td>
+                        <span class="badge bg-${article.status === 'published' ? 'success' : 'warning'}">
+                            ${article.status}
+                        </span>
+                    </td>
+                    <td>${new Date(article.created_at).toLocaleDateString()}</td>
+                    <td>
+                        <button class="btn btn-sm btn-info" onclick="viewArticle(${article.id})">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="btn btn-sm btn-primary" onclick="editArticle(${article.id})">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteArticle(${article.id})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        } else {
+            console.error('Articles data is not an array:', data.items);
+        }
 
-    // Clear existing rows
-    tbody.innerHTML = '';
-
-    // Add articles to table
-    articles.forEach(article => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${article.title}</td>
-            <td>${article.category}</td>
-            <td>${article.author}</td>
-            <td><span class="badge ${article.status === 'published' ? 'bg-success' : 'bg-warning'}">${article.status}</span></td>
-            <td>
-                <button class="btn btn-sm btn-info" onclick="editArticle(${article.id})">
-                    <i class='bx bx-edit'></i>
-                </button>
-                <button class="btn btn-sm btn-danger" onclick="deleteArticle(${article.id})">
-                    <i class='bx bx-trash'></i>
-                </button>
-            </td>
-        `;
-        tbody.appendChild(row);
-    });
-
-    // Initialize DataTable
-    if (currentDataTable) {
-        currentDataTable.destroy();
-    }
-    currentDataTable = $('#articlesTable').DataTable();
-}
-
-// Function to add new article
-function addNewArticle() {
-    // Create modal if it doesn't exist
-    if (!document.getElementById('articleModal')) {
-        const modal = document.createElement('div');
-        modal.className = 'modal fade';
-        modal.id = 'articleModal';
-        modal.innerHTML = `
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Add New Article</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="articleForm">
-                            <input type="hidden" id="articleId">
-                            <div class="mb-3">
-                                <label class="form-label">Title</label>
-                                <input type="text" class="form-control" name="title" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Category</label>
-                                <input type="text" class="form-control" name="category" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Author</label>
-                                <input type="text" class="form-control" name="author" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Content</label>
-                                <textarea class="form-control" name="content" rows="4" required></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Status</label>
-                                <select class="form-control" name="status" required>
-                                    <option value="draft">Draft</option>
-                                    <option value="published">Published</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" onclick="saveArticle()">Save Article</button>
-                    </div>
+        // Reinitialize DataTable if it exists
+        if ($.fn.DataTable.isDataTable('#articles-table')) {
+            $('#articles-table').DataTable().destroy();
+        }
+        $('#articles-table').DataTable();
+    } catch (error) {
+        console.error('Error loading articles:', error);
+        const mainContent = document.getElementById('main-content');
+        if (mainContent) {
+            mainContent.innerHTML = `
+                <div class="alert alert-danger" role="alert">
+                    Failed to load articles. Please try again later.
                 </div>
-            </div>
-        `;
-        document.body.appendChild(modal);
+            `;
+        }
     }
-
-    // Reset form and show modal
-    document.getElementById('articleForm').reset();
-    document.getElementById('articleId').value = '';
-    const modal = new bootstrap.Modal(document.getElementById('articleModal'));
-    modal.show();
 }
 
-// Function to edit article
-function editArticle(id) {
-    // Sample data - replace with API call in production
-    const articles = [
-        {
-            id: 1,
-            title: 'Getting Started with Web Development',
-            category: 'Web Development',
-            author: 'John Doe',
-            content: 'This is a sample article content.',
-            status: 'published'
-        },
-        {
-            id: 2,
-            title: 'Advanced PHP Techniques',
-            category: 'Programming',
-            author: 'Jane Smith',
-            content: 'This is another sample article content.',
-            status: 'draft'
-        },
-        {
-            id: 3,
-            title: 'Database Design Best Practices',
-            category: 'Database',
-            author: 'Mike Johnson',
-            content: 'This is a third sample article content.',
-            status: 'published'
-        }
-    ];
+// View article
+async function viewArticle(id) {
+    try {
+        const response = await fetch(`api/articles.php?id=${id}`, {
+            method: 'GET',
+            headers: getAuthHeaders()
+        });
 
-    // Find the article
-    const article = articles.find(a => a.id === id);
-    if (!article) {
-        console.error('Article not found:', id);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log('Article data:', data); // Debug log
+
+        if (!data.success) {
+            throw new Error(data.message || 'Failed to load article');
+        }
+
+        // Get the article from the response
+        const article = data.item;
+        if (!article) {
+            throw new Error('Article not found');
+        }
+
+        // Update modal content
+        const modal = document.getElementById('viewArticleModal');
+        if (!modal) {
+            throw new Error('View article modal not found');
+        }
+
+        // Update modal content with article data
+        modal.querySelector('.modal-title').textContent = article.title || 'No Title';
+        modal.querySelector('#article-content').innerHTML = article.content || 'No Content';
+        modal.querySelector('#article-category').textContent = article.category || 'No Category';
+        modal.querySelector('#article-author').textContent = article.author || 'No Author';
+        modal.querySelector('#article-status').textContent = article.status || 'No Status';
+        modal.querySelector('#article-created').textContent = article.created_at ? new Date(article.created_at).toLocaleString() : 'Not Available';
+        modal.querySelector('#article-updated').textContent = article.updated_at ? new Date(article.updated_at).toLocaleString() : 'Not Available';
+
+        // Show the modal
+        const modalInstance = new bootstrap.Modal(modal);
+        modalInstance.show();
+    } catch (error) {
+        console.error('Error viewing article:', error);
+        alert('Error viewing article: ' + error.message);
+    }
+}
+
+// Edit article
+async function editArticle(id) {
+    try {
+        const response = await fetch(`api/articles.php?id=${id}`, {
+            method: 'GET',
+            headers: getAuthHeaders()
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log('Article data for edit:', data); // Debug log
+
+        if (!data.success) {
+            throw new Error(data.message || 'Failed to load article');
+        }
+
+        // Get the article from the response
+        const article = data.item;
+        if (!article) {
+            throw new Error('Article not found');
+        }
+
+        // Update modal content
+        const modal = document.getElementById('editArticleModal');
+        if (!modal) {
+            throw new Error('Edit article modal not found');
+        }
+
+        // Fill form with article data
+        const form = document.getElementById('edit-article-form');
+        form.querySelector('#edit-article-id').value = article.id;
+        form.querySelector('#edit-article-title').value = article.title || '';
+        form.querySelector('#edit-article-category').value = article.category || 'Uncategorized';
+        form.querySelector('#edit-article-author').value = article.author || 'Admin';
+        form.querySelector('#edit-article-content').value = article.content || '';
+        form.querySelector('#edit-article-status').value = article.status || 'draft';
+
+        // Show the modal
+        const modalInstance = new bootstrap.Modal(modal);
+        modalInstance.show();
+    } catch (error) {
+        console.error('Error editing article:', error);
+        alert('Error editing article: ' + error.message);
+    }
+}
+
+// Delete article
+async function deleteArticle(id) {
+    if (!confirm('Are you sure you want to delete this article?')) {
         return;
     }
-
-    // Create modal if it doesn't exist
-    if (!document.getElementById('articleModal')) {
-        addNewArticle();
+    
+    try {
+        const response = await fetch(`api/articles.php?id=${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error('Failed to delete article');
+        }
+        
+        const data = await response.json();
+        if (!data.success) {
+            throw new Error(data.message || 'Failed to delete article');
+        }
+        
+        alert('Article deleted successfully');
+        await loadArticles();
+    } catch (error) {
+        console.error('Error deleting article:', error);
+        alert('Error deleting article');
     }
+}
 
-    // Fill form with article data
-    const form = document.getElementById('articleForm');
-    document.getElementById('articleId').value = article.id;
-    form.querySelector('[name="title"]').value = article.title;
-    form.querySelector('[name="category"]').value = article.category;
-    form.querySelector('[name="author"]').value = article.author;
-    form.querySelector('[name="content"]').value = article.content;
-    form.querySelector('[name="status"]').value = article.status;
+// Add article
+async function handleAddArticle(e) {
+    e.preventDefault();
+    
+    try {
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
 
-    // Show modal
-    const modal = new bootstrap.Modal(document.getElementById('articleModal'));
+        const response = await fetch('api/articles.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(result.message || 'Failed to add article');
+        }
+
+        // Close modal and reload articles
+        const modal = bootstrap.Modal.getInstance(document.getElementById('addArticleModal'));
+        modal.hide();
+        loadArticles();
+
+        // Show success message
+        alert('Article added successfully');
+    } catch (error) {
+        console.error('Error adding article:', error);
+        alert(error.message || 'Failed to add article');
+    }
+}
+
+// Handle edit article form submission
+async function handleEditArticle(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    const id = data.id;
+
+    try {
+        const response = await fetch('api/articles.php', {
+            method: 'PUT',
+            headers: {
+                ...getAuthHeaders(),
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id: parseInt(id),
+                title: data.title,
+                content: data.content,
+                category: data.category || 'Uncategorized',
+                author: data.author || 'Admin',
+                status: data.status || 'draft'
+            })
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        if (!result.success) {
+            throw new Error(result.message || 'Failed to update article');
+        }
+
+        // Close modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById('editArticleModal'));
+        modal.hide();
+
+        // Reload articles
+        await loadArticles();
+
+        // Show success message
+        alert('Article updated successfully');
+    } catch (error) {
+        console.error('Error updating article:', error);
+        alert('Error updating article: ' + error.message);
+    }
+}
+
+// Show add article modal
+function showAddArticleModal() {
+    const modal = new bootstrap.Modal(document.getElementById('addArticleModal'));
     modal.show();
 }
 
-// Function to delete article
-function deleteArticle(id) {
-    if (confirm('Are you sure you want to delete this article?')) {
-        // TODO: Implement delete functionality
-        console.log('Delete article:', id);
-        loadArticles(); // Reload articles after deletion
+// Initialize articles
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event listeners for article forms
+    const addArticleForm = document.getElementById('add-article-form');
+    if (addArticleForm) {
+        addArticleForm.addEventListener('submit', handleAddArticle);
     }
-}
 
-// Function to save article
-function saveArticle() {
-    const form = document.getElementById('articleForm');
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-    const articleId = document.getElementById('articleId').value;
-    
-    // TODO: Implement save functionality
-    console.log('Save article:', { ...data, id: articleId || null });
-    
-    // Close modal and reload articles
-    const modal = bootstrap.Modal.getInstance(document.getElementById('articleModal'));
-    modal.hide();
-    loadArticles();
-}
+    const editArticleForm = document.getElementById('edit-article-form');
+    if (editArticleForm) {
+        editArticleForm.addEventListener('submit', handleEditArticle);
+    }
+});
 
 // Export functions to global scope
 window.loadArticles = loadArticles;
-window.addNewArticle = addNewArticle;
+window.viewArticle = viewArticle;
 window.editArticle = editArticle;
 window.deleteArticle = deleteArticle;
-window.saveArticle = saveArticle; 
+window.showAddArticleModal = showAddArticleModal; 

@@ -1,0 +1,59 @@
+AUTH.JS Documentation
+===================
+
+Purpose:
+--------
+Frontend authentication handling, managing user login, session state, and token management.
+
+Key Functions:
+-------------
+1. Login Handling
+   - Form submission handling
+   - API communication
+   - Token storage
+   - Error display
+
+2. Session Management
+   - Token validation
+   - User state maintenance
+   - Redirect handling
+   - Logout functionality
+
+Connections:
+-----------
+- Connected to:
+  * auth.php: Backend authentication API
+  * index.html: Login form and UI
+  * dashboard.js: Session validation
+  * localStorage: Token storage
+
+Data Flow:
+---------
+1. User submits login form
+2. auth.js sends credentials to auth.php
+3. Receives and stores JWT token
+4. Redirects to dashboard on success
+5. Handles error display on failure
+
+UI Components:
+------------
+- Login form
+- Error messages
+- Loading indicators
+- Form validation
+
+Error Handling:
+--------------
+- Network errors
+- Invalid credentials
+- Server errors
+- Token validation
+- Form validation
+
+Security Features:
+----------------
+- Secure token storage
+- Form validation
+- Error message sanitization
+- Session management
+- Redirect protection 

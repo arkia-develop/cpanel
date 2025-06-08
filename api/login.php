@@ -1,84 +1,52 @@
 <?php
-// Enable error reporting for debugging
+// Prevent any output before headers
+ob_start();
+
+// Set error handling
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+ini_set('error_log', __DIR__ . '/error.log');
 
-// Start session
-session_start();
-
-// Set headers for JSON response and CORS
+// Set content type
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: POST');
-header('Access-Control-Allow-Headers: Content-Type');
 
-// Log the request method and raw input for debugging
-error_log('Request Method: ' . $_SERVER['REQUEST_METHOD']);
-error_log('Raw Input: ' . file_get_contents('php://input'));
+// Get POST data
+$input = file_get_contents('php://input');
+error_log("Raw input: " . $input);
 
-// Handle preflight OPTIONS request
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
-    exit();
-}
+$data = json_decode($input, true);
+error_log("Decoded data: " . print_r($data, true));
 
-// Only allow POST requests
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-    echo json_encode(['success' => false, 'message' => 'Method not allowed']);
-    exit();
-}
-
-// Get JSON input
-$json = file_get_contents('php://input');
-$data = json_decode($json, true);
-
-// Log the decoded data for debugging
-error_log('Decoded Data: ' . print_r($data, true));
-
-// Validate input
+// Validate required fields
 if (!isset($data['email']) || !isset($data['password'])) {
+    error_log("Login error: Email and password are required");
+    error_log("Data received: " . print_r($data, true));
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'Email and password are required']);
-    exit();
+    exit;
 }
 
-// Validate email format
-if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-    http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'Invalid email format']);
-    exit();
+// Load users
+$usersFile = __DIR__ . '/users.json';
+if (!file_exists($usersFile)) {
+    error_log("Login error: Users file not found");
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Users file not found']);
+    exit;
 }
 
-// Function to read users from JSON file
-function readUsers() {
-    $usersFile = __DIR__ . '/users.json';
-    
-    // Create empty users file if it doesn't exist
-    if (!file_exists($usersFile)) {
-        file_put_contents($usersFile, json_encode(['users' => []]));
-        return [];
-    }
-    
-    $json = file_get_contents($usersFile);
-    if ($json === false) {
-        error_log('Failed to read users.json');
-        return [];
-    }
-    
-    $data = json_decode($json, true);
-    if ($data === null) {
-        error_log('Failed to decode users.json');
-        return [];
-    }
-    
-    return isset($data['users']) ? $data['users'] : [];
+$usersData = json_decode(file_get_contents($usersFile), true);
+if (!isset($usersData['users']) || !is_array($usersData['users'])) {
+    error_log("Login error: Invalid users data");
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Invalid users data']);
+    exit;
 }
 
-// Get users from JSON file
-$users = readUsers();
+$users = $usersData['users'];
 
-// Find user by email
+// Find user
 $user = null;
 foreach ($users as $u) {
     if ($u['email'] === $data['email']) {
@@ -87,30 +55,36 @@ foreach ($users as $u) {
     }
 }
 
-// Log the comparison for debugging
-error_log('Found user: ' . print_r($user, true));
-
-if ($user && $user['password'] === $data['password']) {
-    // Set session variables
-    $_SESSION['user_id'] = $user['id'];
-    $_SESSION['user_email'] = $user['email'];
-    $_SESSION['user_name'] = $user['name'];
-    $_SESSION['user_role'] = $user['role'];
-    
-    // Remove password from user data before sending
-    unset($user['password']);
-    
-    // Login successful
-    echo json_encode([
-        'success' => true,
-        'message' => 'Login successful',
-        'user' => $user
-    ]);
-} else {
-    // Login failed
+// Verify user and password
+if (!$user || !password_verify($data['password'], $user['password'])) {
+    error_log("Login error: Invalid email or password");
+    error_log("Attempted login with email: " . $data['email']);
     http_response_code(401);
-    echo json_encode([
-        'success' => false,
-        'message' => 'Invalid email or password'
-    ]);
-} 
+    echo json_encode(['success' => false, 'message' => 'Invalid email or password']);
+    exit;
+}
+
+// Generate token
+require_once __DIR__ . '/jwt.php';
+$token = JWTHandler::generateToken($user);
+
+if (!$token) {
+    error_log("Login error: Failed to generate token");
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Failed to generate token']);
+    exit;
+}
+
+// Remove password from user data
+unset($user['password']);
+
+// Return success response
+echo json_encode([
+    'success' => true,
+    'message' => 'Login successful',
+    'token' => $token,
+    'user' => $user
+]);
+
+// End output buffering and flush
+ob_end_flush(); 

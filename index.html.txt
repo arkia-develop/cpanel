@@ -1,0 +1,68 @@
+INDEX.HTML Documentation
+======================
+
+Purpose:
+--------
+Login page interface providing authentication access to the admin dashboard.
+
+Structure:
+---------
+1. Layout Components
+   - Login form
+   - Error messages
+   - Loading indicators
+   - Branding elements
+
+2. Form Elements
+   - Email input
+   - Password input
+   - Submit button
+   - Error display
+
+Connections:
+-----------
+- Connected to:
+  * auth.js: Authentication handling
+  * auth.php: Backend API
+  * CSS files: Styling
+  * JS files: Functionality
+
+Features:
+--------
+- Clean login interface
+- Form validation
+- Error handling
+- Loading states
+- Responsive design
+- Security features
+
+Security Features:
+----------------
+- Password field protection
+- Form validation
+- Error message handling
+- Token management
+- Session control
+
+Dependencies:
+------------
+- Bootstrap CSS/JS
+- Font Awesome
+- Custom CSS
+- Custom JS files
+
+Flow:
+-----
+1. User enters credentials
+2. Form validation
+3. API communication
+4. Token handling
+5. Dashboard redirect
+
+Error Handling:
+--------------
+- Invalid credentials
+- Network errors
+- Server errors
+- Validation errors
+- Display errors 

@@ -1,0 +1,133 @@
+Articles Management JavaScript (articles.js)
+=========================================
+
+This file handles all articles-related functionality in the admin dashboard.
+
+Key Functions:
+-------------
+
+1. loadArticles()
+   - Fetches articles from the API
+   - Displays articles in a DataTable
+   - Handles error cases and displays appropriate messages
+   - Includes add/edit/delete buttons for each article
+
+2. editArticle(id)
+   - Fetches a specific article by ID
+   - Populates the edit modal with article data
+   - Handles form population and modal display
+   - Error handling for API responses
+
+3. handleEditArticle(e)
+   - Handles the edit form submission
+   - Sends PUT request to API with article data
+   - ID is sent in request body
+   - Handles success/error cases with user feedback
+
+4. deleteArticle(id)
+   - Confirms deletion with user
+   - Sends DELETE request to API
+   - Reloads articles list on success
+   - Error handling with user feedback
+
+5. showAddArticleModal()
+   - Creates and displays add article modal
+   - Handles form initialization
+   - Modal management
+
+6. handleAddArticle(e)
+   - Handles the add form submission
+   - Sends POST request to API
+   - Handles success/error cases
+   - Reloads articles list on success
+
+API Integration:
+--------------
+- Uses RESTful API endpoints
+- Handles authentication via JWT tokens
+- Proper error handling for API responses
+- Consistent data formatting
+
+UI Components:
+------------
+- DataTable for article listing
+- Modal forms for add/edit
+- Status indicators
+- Action buttons for each article
+- Rich text editor for content
+
+Error Handling:
+-------------
+- API error responses
+- Network issues
+- Invalid data
+- User feedback via alerts
+- Console logging for debugging
+
+Purpose:
+--------
+Manages article-related functionality including CRUD operations, display, and interaction.
+
+Key Functions:
+-------------
+1. Article Management
+   - Load articles
+   - Add new articles
+   - Edit existing articles
+   - Delete articles
+   - View article details
+
+2. Data Handling
+   - API communication
+   - Data formatting
+   - Table updates
+   - Modal management
+
+Connections:
+-----------
+- Connected to:
+  * articles.php: Backend API
+  * dashboard.js: Main controller
+  * dashboard.html: UI elements
+  * DataTables: Table functionality
+
+Data Flow:
+---------
+1. Load articles from API
+2. Display in DataTable
+3. Handle CRUD operations
+4. Update UI accordingly
+5. Manage modals
+
+UI Components:
+------------
+- Articles table
+- Add/Edit modals
+- View modal
+- Action buttons
+- Status indicators
+
+Features:
+--------
+- CRUD operations
+- Data validation
+- Error handling
+- Status management
+- Date formatting
+- HTML content handling
+
+Error Handling:
+--------------
+- API errors
+- Validation errors
+- Display errors
+- Network issues
+- Data format issues
+
+Security:
+--------
+- Token validation
+- Input sanitization
+- Error logging
+- Access control
+- Data validation 

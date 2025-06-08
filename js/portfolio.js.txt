@@ -1,0 +1,63 @@
+Portfolio Management JavaScript (portfolio.js)
+===========================================
+
+This file handles all portfolio-related functionality in the admin dashboard.
+
+Key Functions:
+-------------
+
+1. loadPortfolio()
+   - Fetches portfolio items from the API
+   - Displays items in a DataTable
+   - Handles error cases and displays appropriate messages
+   - Includes add/edit/delete buttons for each item
+
+2. editPortfolioItem(id)
+   - Fetches a specific portfolio item by ID
+   - Creates and populates an edit modal
+   - Handles form population and modal display
+   - Error handling for API responses
+
+3. savePortfolioItem()
+   - Handles both new item creation and updates
+   - Sends data to API with proper formatting
+   - ID is sent in request body for both POST and PUT
+   - Handles success/error cases with user feedback
+
+4. deletePortfolioItem(id)
+   - Confirms deletion with user
+   - Sends DELETE request to API
+   - Reloads portfolio list on success
+   - Error handling with user feedback
+
+5. addNewPortfolioItem()
+   - Creates and displays add item modal
+   - Handles form initialization
+   - Modal management
+
+6. viewPortfolioItem(id)
+   - Displays detailed view of portfolio item
+   - Shows all item properties
+   - Modal-based display
+
+API Integration:
+--------------
+- Uses RESTful API endpoints
+- Handles authentication via JWT tokens
+- Proper error handling for API responses
+- Consistent data formatting
+
+UI Components:
+------------
+- DataTable for item listing
+- Modal forms for add/edit/view
+- Status badges with appropriate colors
+- Action buttons for each item
+
+Error Handling:
+-------------
+- API error responses
+- Network issues
+- Invalid data
+- User feedback via alerts
+- Console logging for debugging 

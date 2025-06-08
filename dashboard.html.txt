@@ -1,0 +1,73 @@
+DASHBOARD.HTML Documentation
+=========================
+
+Purpose:
+--------
+Main dashboard interface providing the structure and UI components for the admin panel.
+
+Structure:
+---------
+1. Layout Components
+   - Sidebar navigation
+   - Main content area
+   - Modal containers
+   - Loading indicators
+
+2. UI Sections
+   - Dashboard overview
+   - Articles management
+   - Services management
+   - Portfolio management
+   - User management
+
+Connections:
+-----------
+- Connected to:
+  * dashboard.js: Main controller
+  * articles.js: Article functionality
+  * services.js: Service functionality
+  * portfolio.js: Portfolio functionality
+  * CSS files: Styling
+  * JS files: Functionality
+
+Modal Components:
+--------------
+1. Article Modals
+   - View article
+   - Add article
+   - Edit article
+
+2. Service Modals
+   - View service
+   - Add service
+   - Edit service
+
+3. Portfolio Modals
+   - View portfolio item
+   - Add portfolio item
+   - Edit portfolio item
+
+Features:
+--------
+- Responsive design
+- Dynamic content loading
+- Modal system
+- Data tables
+- Navigation system
+- Authentication integration
+
+Dependencies:
+------------
+- Bootstrap CSS/JS
+- Font Awesome
+- DataTables
+- Custom CSS
+- Custom JS files
+
+Security:
+--------
+- Authentication checks
+- Access control
+- Form validation
+- Error handling
+- Token management 

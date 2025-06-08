@@ -1,12 +1,17 @@
 <?php
-// Enable error reporting for debugging
+// Enable error reporting
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+ini_set('error_log', 'error.log');
 
+// Set content type to JSON
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type');
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
+
+require_once 'jwt.php';
 
 // Handle preflight OPTIONS request
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -14,156 +19,201 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-$portfolioFile = __DIR__ . '/portfolio.json';
-
-// Read portfolio items from JSON file
-function readPortfolio() {
-    global $portfolioFile;
-    if (!file_exists($portfolioFile)) {
-        // Create empty portfolio file if it doesn't exist
-        file_put_contents($portfolioFile, json_encode(['portfolio' => []]));
-        return ['portfolio' => []];
-    }
-    $data = json_decode(file_get_contents($portfolioFile), true);
-    if (json_last_error() !== JSON_ERROR_NONE) {
-        error_log('Error reading portfolio file: ' . json_last_error_msg());
-        return ['portfolio' => []];
-    }
-    return $data ?: ['portfolio' => []];
-}
-
-// Write portfolio items to JSON file
-function writePortfolio($data) {
-    global $portfolioFile;
-    $result = file_put_contents($portfolioFile, json_encode($data, JSON_PRETTY_PRINT));
-    if ($result === false) {
-        error_log('Error writing to portfolio file');
-        throw new Exception('Failed to write portfolio data');
-    }
-}
-
-session_start();
-
-// Check if user is logged in
-if (!isset($_SESSION['user_id'])) {
+// Check authentication
+$headers = getallheaders();
+if (!isset($headers['Authorization'])) {
+    error_log('Portfolio API Error: Missing or invalid Authorization header');
     http_response_code(401);
-    echo json_encode(['error' => 'Unauthorized']);
+    echo json_encode(['success' => false, 'message' => 'Missing or invalid Authorization header']);
     exit;
 }
 
-// Sample data - replace with database queries in production
-$portfolio = [
-    [
-        'id' => 1,
-        'title' => 'E-commerce Website',
-        'category' => 'Web Development',
-        'client' => 'ABC Company',
-        'status' => 'published'
-    ],
-    [
-        'id' => 2,
-        'title' => 'Mobile App Design',
-        'category' => 'UI/UX',
-        'client' => 'XYZ Corp',
-        'status' => 'published'
-    ],
-    [
-        'id' => 3,
-        'title' => 'Brand Identity',
-        'category' => 'Design',
-        'client' => '123 Industries',
-        'status' => 'draft'
-    ]
-];
+$auth_header = $headers['Authorization'];
+if (!preg_match('/Bearer\s+(.*)$/i', $auth_header, $matches)) {
+    error_log('Portfolio API Error: Invalid Authorization header format');
+    http_response_code(401);
+    echo json_encode(['success' => false, 'message' => 'Invalid Authorization header format']);
+    exit;
+}
 
-echo json_encode(['portfolio' => $portfolio]);
+$jwt = $matches[1];
+$jwtHandler = new JWTHandler();
 
 try {
-    // Handle different HTTP methods
-    switch ($_SERVER['REQUEST_METHOD']) {
-        case 'GET':
-            // Check if specific portfolio item is requested
-            $id = $_GET['id'] ?? null;
-            $data = readPortfolio();
-            
-            if ($id) {
-                // Find specific portfolio item
-                $item = null;
-                foreach ($data['portfolio'] as $p) {
-                    if ($p['id'] == $id) {
-                        $item = $p;
-                        break;
-                    }
-                }
-                if ($item) {
-                    echo json_encode(['item' => $item]);
-                } else {
-                    http_response_code(404);
-                    echo json_encode(['error' => 'Portfolio item not found']);
-                }
-            } else {
-                // Return all portfolio items
-                echo json_encode($data);
-            }
-            break;
-
-        case 'POST':
-            // Add new portfolio item
-            $input = json_decode(file_get_contents('php://input'), true);
-            if (json_last_error() !== JSON_ERROR_NONE) {
-                throw new Exception('Invalid JSON data: ' . json_last_error_msg());
-            }
-            $data = readPortfolio();
-            $input['id'] = time(); // Simple ID generation
-            $input['date'] = date('Y-m-d');
-            $data['portfolio'][] = $input;
-            writePortfolio($data);
-            echo json_encode(['success' => true, 'item' => $input]);
-            break;
-
-        case 'PUT':
-            // Update existing portfolio item
-            $input = json_decode(file_get_contents('php://input'), true);
-            if (json_last_error() !== JSON_ERROR_NONE) {
-                throw new Exception('Invalid JSON data: ' . json_last_error_msg());
-            }
-            $data = readPortfolio();
-            $found = false;
-            foreach ($data['portfolio'] as &$item) {
-                if ($item['id'] == $input['id']) {
-                    $item = array_merge($item, $input);
-                    $found = true;
-                    break;
-                }
-            }
-            if (!$found) {
-                throw new Exception('Portfolio item not found');
-            }
-            writePortfolio($data);
-            echo json_encode(['success' => true]);
-            break;
-
-        case 'DELETE':
-            // Delete portfolio item
-            $id = $_GET['id'] ?? null;
-            if (!$id) {
-                throw new Exception('Portfolio item ID required');
-            }
-            $data = readPortfolio();
-            $data['portfolio'] = array_filter($data['portfolio'], function($item) use ($id) {
-                return $item['id'] != $id;
-            });
-            writePortfolio($data);
-            echo json_encode(['success' => true]);
-            break;
-
-        default:
-            throw new Exception('Method not allowed');
+    $decoded = $jwtHandler->validateToken($jwt);
+    if (!$decoded) {
+        error_log('Token validation error: Invalid token');
+        http_response_code(401);
+        echo json_encode(['success' => false, 'message' => 'Invalid or expired token']);
+        exit;
     }
 } catch (Exception $e) {
-    http_response_code(500);
-    echo json_encode([
-        'success' => false,
-        'error' => $e->getMessage()
-    ]);
+    error_log('Token validation error: ' . $e->getMessage());
+    http_response_code(401);
+    echo json_encode(['success' => false, 'message' => 'Invalid or expired token']);
+    exit;
+}
+
+// Get request method
+$method = $_SERVER['REQUEST_METHOD'];
+
+// Handle different HTTP methods
+switch ($method) {
+    case 'GET':
+        try {
+            $portfolio = json_decode(file_get_contents('portfolio.json'), true);
+            if (!is_array($portfolio)) {
+                $portfolio = [];
+            }
+
+            echo json_encode([
+                'success' => true,
+                'items' => $portfolio
+            ]);
+        } catch (Exception $e) {
+            error_log('Portfolio error: ' . $e->getMessage());
+            http_response_code(500);
+            echo json_encode([
+                'success' => false,
+                'message' => 'Failed to load portfolio'
+            ]);
+        }
+        break;
+        
+    case 'POST':
+        // Get POST data
+        $data = json_decode(file_get_contents('php://input'), true);
+        
+        // Validate required fields
+        if (!isset($data['title']) || !isset($data['description'])) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => 'Title and description are required']);
+            exit;
+        }
+        
+        // Read existing items
+        $items = [];
+        if (file_exists('portfolio.json')) {
+            $items = json_decode(file_get_contents('portfolio.json'), true);
+        }
+        
+        // Generate new ID
+        $newId = 1;
+        if (!empty($items)) {
+            $newId = max(array_column($items, 'id')) + 1;
+        }
+        
+        // Create new item
+        $newItem = [
+            'id' => $newId,
+            'title' => $data['title'],
+            'description' => $data['description'],
+            'image_url' => $data['image_url'] ?? '',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+        ];
+        
+        // Add to items array
+        $items[] = $newItem;
+        
+        // Save to file
+        if (file_put_contents('portfolio.json', json_encode($items, JSON_PRETTY_PRINT))) {
+            echo json_encode(['success' => true, 'item' => $newItem]);
+        } else {
+            http_response_code(500);
+            echo json_encode(['success' => false, 'message' => 'Failed to save portfolio item']);
+        }
+        break;
+        
+    case 'PUT':
+        // Get PUT data
+        $data = json_decode(file_get_contents('php://input'), true);
+        
+        // Validate required fields
+        if (!isset($data['id']) || !isset($data['title']) || !isset($data['description'])) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => 'ID, title and description are required']);
+            exit;
+        }
+        
+        // Read existing items
+        $items = [];
+        if (file_exists('portfolio.json')) {
+            $items = json_decode(file_get_contents('portfolio.json'), true);
+        }
+        
+        // Find and update item
+        $found = false;
+        foreach ($items as &$item) {
+            if ($item['id'] === $data['id']) {
+                $item['title'] = $data['title'];
+                $item['description'] = $data['description'];
+                $item['image_url'] = $data['image_url'] ?? $item['image_url'];
+                $item['updated_at'] = date('Y-m-d H:i:s');
+                $found = true;
+                break;
+            }
+        }
+        
+        if ($found) {
+            // Save to file
+            if (file_put_contents('portfolio.json', json_encode($items, JSON_PRETTY_PRINT))) {
+                echo json_encode(['success' => true, 'item' => $item]);
+            } else {
+                http_response_code(500);
+                echo json_encode(['success' => false, 'message' => 'Failed to update portfolio item']);
+            }
+        } else {
+            http_response_code(404);
+            echo json_encode(['success' => false, 'message' => 'Portfolio item not found']);
+        }
+        break;
+        
+    case 'DELETE':
+        // Get item ID from query string
+        $id = isset($_GET['id']) ? intval($_GET['id']) : null;
+        
+        if (!$id) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => 'Portfolio item ID is required']);
+            exit;
+        }
+        
+        // Read existing items
+        $items = [];
+        if (file_exists('portfolio.json')) {
+            $items = json_decode(file_get_contents('portfolio.json'), true);
+        }
+        
+        // Find and remove item
+        $found = false;
+        foreach ($items as $key => $item) {
+            if ($item['id'] === $id) {
+                unset($items[$key]);
+                $found = true;
+                break;
+            }
+        }
+        
+        if ($found) {
+            // Reindex array
+            $items = array_values($items);
+            
+            // Save to file
+            if (file_put_contents('portfolio.json', json_encode($items, JSON_PRETTY_PRINT))) {
+                echo json_encode(['success' => true, 'message' => 'Portfolio item deleted successfully']);
+            } else {
+                http_response_code(500);
+                echo json_encode(['success' => false, 'message' => 'Failed to delete portfolio item']);
+            }
+        } else {
+            http_response_code(404);
+            echo json_encode(['success' => false, 'message' => 'Portfolio item not found']);
+        }
+        break;
+        
+    default:
+        http_response_code(405);
+        echo json_encode(['success' => false, 'message' => 'Method not allowed']);
+        break;
 } 

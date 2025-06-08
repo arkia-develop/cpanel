@@ -1,0 +1,278 @@
+[06-Jun-2025 20:15:21 Europe/Berlin] Login error: Invalid email or password
+[06-Jun-2025 20:15:55 Europe/Berlin] Login error: Invalid email or password
+[06-Jun-2025 20:18:05 Europe/Berlin] Attempting password verification for user: ahmed.mo.abubakr@gmail.com
+[06-Jun-2025 20:18:05 Europe/Berlin] Stored hash: $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi
+[06-Jun-2025 20:18:05 Europe/Berlin] Provided password: abuBakr&elKhiouty
+[06-Jun-2025 20:18:05 Europe/Berlin] Password verification failed for user: ahmed.mo.abubakr@gmail.com
+[06-Jun-2025 20:18:05 Europe/Berlin] Login error: Invalid email or password
+[06-Jun-2025 20:19:43 Europe/Berlin] Attempting password verification for user: ahmed.mo.abubakr@gmail.com
+[06-Jun-2025 20:19:43 Europe/Berlin] Stored hash: $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi
+[06-Jun-2025 20:19:43 Europe/Berlin] Provided password: abuBakr&elKhiouty
+[06-Jun-2025 20:19:43 Europe/Berlin] Password verification failed for user: ahmed.mo.abubakr@gmail.com
+[06-Jun-2025 20:19:43 Europe/Berlin] Login error: Invalid email or password
+[06-Jun-2025 20:19:44 Europe/Berlin] Attempting password verification for user: ahmed.mo.abubakr@gmail.com
+[06-Jun-2025 20:19:44 Europe/Berlin] Stored hash: $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi
+[06-Jun-2025 20:19:44 Europe/Berlin] Provided password: abuBakr&elKhiouty
+[06-Jun-2025 20:19:45 Europe/Berlin] Password verification failed for user: ahmed.mo.abubakr@gmail.com
+[06-Jun-2025 20:19:45 Europe/Berlin] Login error: Invalid email or password
+[06-Jun-2025 20:19:47 Europe/Berlin] Attempting password verification for user: ahmed.mo.abubakr@gmail.com
+[06-Jun-2025 20:19:47 Europe/Berlin] Stored hash: $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi
+[06-Jun-2025 20:19:47 Europe/Berlin] Provided password: abuBakr&elKhiouty
+[06-Jun-2025 20:19:47 Europe/Berlin] Password verification failed for user: ahmed.mo.abubakr@gmail.com
+[06-Jun-2025 20:19:47 Europe/Berlin] Login error: Invalid email or password
+[06-Jun-2025 20:20:53 Europe/Berlin] Attempting password verification for user: ahmed.mo.abubakr@gmail.com
+[06-Jun-2025 20:20:53 Europe/Berlin] Stored hash: $2y$10$t7XNyeZ.JidgSzPzIBYeaucvEmjJAamB2UC8Bng4I2ZX6l/oBp7MC
+[06-Jun-2025 20:20:53 Europe/Berlin] Provided password: abuBakr&elKhiouty
+[06-Jun-2025 20:20:54 Europe/Berlin] Password verification successful for user: ahmed.mo.abubakr@gmail.com
+[06-Jun-2025 20:20:54 Europe/Berlin] Token generated successfully for user: ahmed.mo.abubakr@gmail.com
+[06-Jun-2025 20:20:54 Europe/Berlin] Received Authorization header: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NjU0fQ.-1Q6MXYnp_pP1odp2fHMlmz8shIe-iy-loQsYMV__cQ
+[06-Jun-2025 20:20:54 Europe/Berlin] Extracted token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NjU0fQ.-1Q6MXYnp_pP1odp2fHMlmz8shIe-iy-loQsYMV__cQ
+[06-Jun-2025 20:20:54 Europe/Berlin] Token validation successful. Decoded data: {"id":1,"email":"ahmed.mo.abubakr@gmail.com","name":"Ahmed Mohamed","role":"admin","exp":1749237654}
+[06-Jun-2025 20:20:54 Europe/Berlin] PHP Warning:  Undefined array key "user" in C:\xampp\htdocs\cpanel\api\check-auth.php on line 36
+[06-Jun-2025 20:22:04 Europe/Berlin] Attempting password verification for user: ahmed.mo.abubakr@gmail.com
+[06-Jun-2025 20:22:04 Europe/Berlin] Stored hash: $2y$10$t7XNyeZ.JidgSzPzIBYeaucvEmjJAamB2UC8Bng4I2ZX6l/oBp7MC
+[06-Jun-2025 20:22:04 Europe/Berlin] Provided password: abuBakr&elKhiouty
+[06-Jun-2025 20:22:04 Europe/Berlin] Password verification successful for user: ahmed.mo.abubakr@gmail.com
+[06-Jun-2025 20:22:04 Europe/Berlin] Token generated successfully for user: ahmed.mo.abubakr@gmail.com
+[06-Jun-2025 20:22:04 Europe/Berlin] Received Authorization header: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:22:04 Europe/Berlin] Extracted token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:22:04 Europe/Berlin] Token validation successful. User data: {"id":1,"email":"ahmed.mo.abubakr@gmail.com","name":"Ahmed Mohamed","role":"admin","exp":1749237724}
+[06-Jun-2025 20:22:06 Europe/Berlin] Received Authorization header: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:22:06 Europe/Berlin] Extracted token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:22:06 Europe/Berlin] Token validation successful. User data: {"id":1,"email":"ahmed.mo.abubakr@gmail.com","name":"Ahmed Mohamed","role":"admin","exp":1749237724}
+[06-Jun-2025 20:26:44 Europe/Berlin] Received Authorization header: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:26:44 Europe/Berlin] Extracted token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:26:44 Europe/Berlin] Token validation successful. User data: {"id":1,"email":"ahmed.mo.abubakr@gmail.com","name":"Ahmed Mohamed","role":"admin","exp":1749237724}
+[06-Jun-2025 20:26:44 Europe/Berlin] Received Authorization header: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:26:44 Europe/Berlin] Extracted token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:26:44 Europe/Berlin] Token validation successful. User data: {"id":1,"email":"ahmed.mo.abubakr@gmail.com","name":"Ahmed Mohamed","role":"admin","exp":1749237724}
+[06-Jun-2025 20:26:44 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function checkAuth() in C:\xampp\htdocs\cpanel\api\dashboard.php:17
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\cpanel\api\dashboard.php on line 17
+[06-Jun-2025 20:26:56 Europe/Berlin] Received Authorization header: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:26:56 Europe/Berlin] Extracted token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:26:56 Europe/Berlin] Token validation successful. User data: {"id":1,"email":"ahmed.mo.abubakr@gmail.com","name":"Ahmed Mohamed","role":"admin","exp":1749237724}
+[06-Jun-2025 20:26:56 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function checkAuth() in C:\xampp\htdocs\cpanel\api\articles.php:17
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\cpanel\api\articles.php on line 17
+[06-Jun-2025 20:28:47 Europe/Berlin] Received Authorization header: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:28:47 Europe/Berlin] Extracted token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:28:47 Europe/Berlin] Token validation successful. User data: {"id":1,"email":"ahmed.mo.abubakr@gmail.com","name":"Ahmed Mohamed","role":"admin","exp":1749237724}
+[06-Jun-2025 20:28:47 Europe/Berlin] Received Authorization header: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:28:47 Europe/Berlin] Extracted token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:28:47 Europe/Berlin] Token validation successful. User data: {"id":1,"email":"ahmed.mo.abubakr@gmail.com","name":"Ahmed Mohamed","role":"admin","exp":1749237724}
+[06-Jun-2025 20:28:47 Europe/Berlin] Sending dashboard data: {"success":true,"articles":3,"services":3,"portfolio":3,"users":1,"recentArticles":[{"id":1,"title":"Getting Started with Web Development","category":"Web Development","author":"John Doe","content":"This is a sample article about web development basics.","status":"published","created_at":"2024-03-20 10:00:00"},{"id":2,"title":"Advanced PHP Techniques","category":"Programming","author":"Jane Smith","content":"Learn about advanced PHP programming techniques.","status":"published","created_at":"2024-03-20 11:00:00"},{"id":3,"title":"Database Design Best Practices","category":"Database","author":"Mike Johnson","content":"Essential tips for designing efficient databases.","status":"draft","created_at":"2024-03-20 12:00:00"}],"recentServices":[{"id":1,"name":"Web Development","description":"Custom web development services","status":"active","created_at":"2024-03-20 10:00:00"},{"id":2,"name":"SEO Optimization","description":"Search engine optimization services","status":"active","created_at":"2024-03-20 11:00:00"},{"id":3,"name":"Content Writing","description":"Professional content writing services","status":"active","created_at":"2024-03-20 12:00:00"}]}
+[06-Jun-2025 20:28:49 Europe/Berlin] Received Authorization header: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:28:49 Europe/Berlin] Extracted token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:28:49 Europe/Berlin] Token validation successful. User data: {"id":1,"email":"ahmed.mo.abubakr@gmail.com","name":"Ahmed Mohamed","role":"admin","exp":1749237724}
+[06-Jun-2025 20:28:49 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function checkAuth() in C:\xampp\htdocs\cpanel\api\articles.php:17
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\cpanel\api\articles.php on line 17
+[06-Jun-2025 20:28:53 Europe/Berlin] Received Authorization header: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:28:53 Europe/Berlin] Extracted token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:28:53 Europe/Berlin] Token validation successful. User data: {"id":1,"email":"ahmed.mo.abubakr@gmail.com","name":"Ahmed Mohamed","role":"admin","exp":1749237724}
+[06-Jun-2025 20:28:53 Europe/Berlin] Sending dashboard data: {"success":true,"articles":3,"services":3,"portfolio":3,"users":1,"recentArticles":[{"id":1,"title":"Getting Started with Web Development","category":"Web Development","author":"John Doe","content":"This is a sample article about web development basics.","status":"published","created_at":"2024-03-20 10:00:00"},{"id":2,"title":"Advanced PHP Techniques","category":"Programming","author":"Jane Smith","content":"Learn about advanced PHP programming techniques.","status":"published","created_at":"2024-03-20 11:00:00"},{"id":3,"title":"Database Design Best Practices","category":"Database","author":"Mike Johnson","content":"Essential tips for designing efficient databases.","status":"draft","created_at":"2024-03-20 12:00:00"}],"recentServices":[{"id":1,"name":"Web Development","description":"Custom web development services","status":"active","created_at":"2024-03-20 10:00:00"},{"id":2,"name":"SEO Optimization","description":"Search engine optimization services","status":"active","created_at":"2024-03-20 11:00:00"},{"id":3,"name":"Content Writing","description":"Professional content writing services","status":"active","created_at":"2024-03-20 12:00:00"}]}
+[06-Jun-2025 20:31:04 Europe/Berlin] Received Authorization header: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:31:04 Europe/Berlin] Extracted token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:31:04 Europe/Berlin] Token validation successful. User data: {"id":1,"email":"ahmed.mo.abubakr@gmail.com","name":"Ahmed Mohamed","role":"admin","exp":1749237724}
+[06-Jun-2025 20:31:04 Europe/Berlin] Received Authorization header: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:31:04 Europe/Berlin] Extracted token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBNb2hhbWVkIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5MjM3NzI0fQ.JUujU4Am1k1RSDhB0PJ9hERSPHSQt2lQ245oh-seuoI
+[06-Jun-2025 20:31:04 Europe/Berlin] Token validation successful. User data: {"id":1,"email":"ahmed.mo.abubakr@gmail.com","name":"Ahmed Mohamed","role":"admin","exp":1749237724}
+[06-Jun-2025 20:31:04 Europe/Berlin] Sending dashboard data: {"success":true,"articles":3,"services":3,"portfolio":3,"users":1,"recentArticles":[{"id":1,"title":"Getting Started with Web Development","category":"Web Development","author":"John Doe","content":"This is a sample article about web development basics.","status":"published","created_at":"2024-03-20 10:00:00"},{"id":2,"title":"Advanced PHP Techniques","category":"Programming","author":"Jane Smith","content":"Learn about advanced PHP programming techniques.","status":"published","created_at":"2024-03-20 11:00:00"},{"id":3,"title":"Database Design Best Practices","category":"Database","author":"Mike Johnson","content":"Essential tips for designing efficient databases.","status":"draft","created_at":"2024-03-20 12:00:00"}],"recentServices":[{"id":1,"name":"Web Development","description":"Custom web development services","status":"active","created_at":"2024-03-20 10:00:00"},{"id":2,"name":"SEO Optimization","description":"Search engine optimization services","status":"active","created_at":"2024-03-20 11:00:00"},{"id":3,"name":"Content Writing","description":"Professional content writing services","status":"active","created_at":"2024-03-20 12:00:00"}]}
+[06-Jun-2025 20:43:27 Europe/Berlin] Login error: Email and password are required
+[06-Jun-2025 20:43:29 Europe/Berlin] Login error: Email and password are required
+[06-Jun-2025 20:43:30 Europe/Berlin] Login error: Email and password are required
+[06-Jun-2025 20:44:37 Europe/Berlin] Login error: Email and password are required
+[06-Jun-2025 20:46:09 Europe/Berlin] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\cpanel\api\login.php on line 40
+[06-Jun-2025 20:46:09 Europe/Berlin] Login error: Invalid email or password
+[06-Jun-2025 20:46:11 Europe/Berlin] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\cpanel\api\login.php on line 40
+[06-Jun-2025 20:46:11 Europe/Berlin] Login error: Invalid email or password
+[06-Jun-2025 20:46:41 Europe/Berlin] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\cpanel\api\login.php on line 40
+[06-Jun-2025 20:46:41 Europe/Berlin] Login error: Invalid email or password
+[06-Jun-2025 20:46:44 Europe/Berlin] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\cpanel\api\login.php on line 40
+[06-Jun-2025 20:46:44 Europe/Berlin] Login error: Invalid email or password
+[06-Jun-2025 20:47:13 Europe/Berlin] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\cpanel\api\login.php on line 40
+[06-Jun-2025 20:47:13 Europe/Berlin] Login error: Invalid email or password
+[06-Jun-2025 20:48:46 Europe/Berlin] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\cpanel\api\login.php on line 42
+[06-Jun-2025 20:48:49 Europe/Berlin] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\cpanel\api\login.php on line 42
+[06-Jun-2025 20:48:54 Europe/Berlin] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\cpanel\api\login.php on line 42
+[06-Jun-2025 20:50:33 Europe/Berlin] Received login data: Array
+(
+    [email] => admin@example.com
+    [password] => password
+)
+
+[06-Jun-2025 20:50:33 Europe/Berlin] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\cpanel\api\login.php on line 49
+[06-Jun-2025 20:50:33 Europe/Berlin] Login error: Invalid email or password
+[06-Jun-2025 21:01:30 Europe/Berlin] Raw input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[06-Jun-2025 21:01:30 Europe/Berlin] Decoded data: Array
+(
+    [email] => ahmed.mo.abubakr@gmail.com
+    [password] => abuBakr&elKhiouty
+)
+
+[06-Jun-2025 21:01:30 Europe/Berlin] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\cpanel\api\login.php on line 50
+[06-Jun-2025 21:01:30 Europe/Berlin] Login error: Invalid email or password
+[06-Jun-2025 21:01:30 Europe/Berlin] Attempted login with email: ahmed.mo.abubakr@gmail.com
+[06-Jun-2025 21:01:51 Europe/Berlin] Raw input: {"email":"admin@example.com","password":"password"}
+[06-Jun-2025 21:01:51 Europe/Berlin] Decoded data: Array
+(
+    [email] => admin@example.com
+    [password] => password
+)
+
+[06-Jun-2025 21:01:51 Europe/Berlin] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\cpanel\api\login.php on line 50
+[06-Jun-2025 21:01:51 Europe/Berlin] Login error: Invalid email or password
+[06-Jun-2025 21:01:51 Europe/Berlin] Attempted login with email: admin@example.com
+[06-Jun-2025 21:04:52 Europe/Berlin] Raw input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[06-Jun-2025 21:04:52 Europe/Berlin] Decoded data: Array
+(
+    [email] => ahmed.mo.abubakr@gmail.com
+    [password] => abuBakr&elKhiouty
+)
+
+[06-Jun-2025 21:04:52 Europe/Berlin] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\cpanel\api\login.php on line 50
+[06-Jun-2025 21:04:52 Europe/Berlin] Login error: Invalid email or password
+[06-Jun-2025 21:04:52 Europe/Berlin] Attempted login with email: ahmed.mo.abubakr@gmail.com
+[06-Jun-2025 21:07:04 Europe/Berlin] Raw input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[06-Jun-2025 21:07:04 Europe/Berlin] Decoded data: Array
+(
+    [email] => ahmed.mo.abubakr@gmail.com
+    [password] => abuBakr&elKhiouty
+)
+
+[06-Jun-2025 21:12:41 Europe/Berlin] Dashboard API Error: Missing or invalid Authorization header
+[06-Jun-2025 21:12:44 Europe/Berlin] Token validation error: Invalid token signature
+[06-Jun-2025 21:12:44 Europe/Berlin] Articles API Error: Invalid or expired token
+[07-Jun-2025 16:14:32 Europe/Berlin] Raw input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[07-Jun-2025 16:14:32 Europe/Berlin] Decoded data: Array
+(
+    [email] => ahmed.mo.abubakr@gmail.com
+    [password] => abuBakr&elKhiouty
+)
+
+[07-Jun-2025 16:14:35 Europe/Berlin] Dashboard API Error: Missing or invalid Authorization header
+[07-Jun-2025 16:14:43 Europe/Berlin] Dashboard API Error: Missing or invalid Authorization header
+[07-Jun-2025 16:23:46 Europe/Berlin] Dashboard API Error: Missing or invalid Authorization header
+[07-Jun-2025 16:23:51 Europe/Berlin] Dashboard API Error: Missing or invalid Authorization header
+[07-Jun-2025 16:23:55 Europe/Berlin] Users API Error: Missing or invalid Authorization header
+[07-Jun-2025 16:47:21 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method JWTHandler::jwtDecodeData() in C:\xampp\htdocs\cpanel\api\dashboard.php:27
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\cpanel\api\dashboard.php on line 27
+[07-Jun-2025 16:47:25 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method JWTHandler::jwtDecodeData() in C:\xampp\htdocs\cpanel\api\portfolio.php:27
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\cpanel\api\portfolio.php on line 27
+[07-Jun-2025 17:05:03 Europe/Berlin] Raw input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[07-Jun-2025 17:05:03 Europe/Berlin] Decoded data: Array
+(
+    [email] => ahmed.mo.abubakr@gmail.com
+    [password] => abuBakr&elKhiouty
+)
+
+[07-Jun-2025 17:05:03 Europe/Berlin] PHP Fatal error:  Uncaught Error: Non-static method JWTHandler::generateToken() cannot be called statically in C:\xampp\htdocs\cpanel\api\login.php:69
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\cpanel\api\login.php on line 69
+[07-Jun-2025 17:05:16 Europe/Berlin] Raw input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[07-Jun-2025 17:05:16 Europe/Berlin] Decoded data: Array
+(
+    [email] => ahmed.mo.abubakr@gmail.com
+    [password] => abuBakr&elKhiouty
+)
+
+[07-Jun-2025 17:05:16 Europe/Berlin] PHP Fatal error:  Uncaught Error: Non-static method JWTHandler::generateToken() cannot be called statically in C:\xampp\htdocs\cpanel\api\login.php:69
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\cpanel\api\login.php on line 69
+[07-Jun-2025 17:05:17 Europe/Berlin] Raw input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[07-Jun-2025 17:05:17 Europe/Berlin] Decoded data: Array
+(
+    [email] => ahmed.mo.abubakr@gmail.com
+    [password] => abuBakr&elKhiouty
+)
+
+[07-Jun-2025 17:05:18 Europe/Berlin] PHP Fatal error:  Uncaught Error: Non-static method JWTHandler::generateToken() cannot be called statically in C:\xampp\htdocs\cpanel\api\login.php:69
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\cpanel\api\login.php on line 69
+[07-Jun-2025 17:05:54 Europe/Berlin] PHP Fatal error:  Uncaught Error: Non-static method JWTHandler::validateToken() cannot be called statically in C:\xampp\htdocs\cpanel\api\services.php:29
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\cpanel\api\services.php on line 29
+[07-Jun-2025 17:14:41 Europe/Berlin] PHP Fatal error:  Uncaught Error: Non-static method JWTHandler::validateToken() cannot be called statically in C:\xampp\htdocs\cpanel\api\services.php:29
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\cpanel\api\services.php on line 29
+[07-Jun-2025 17:27:18 Europe/Berlin] Token validation error: Invalid token
+[07-Jun-2025 17:29:38 Europe/Berlin] Raw input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[07-Jun-2025 17:29:38 Europe/Berlin] Decoded data: Array
+(
+    [email] => ahmed.mo.abubakr@gmail.com
+    [password] => abuBakr&elKhiouty
+)
+
+[07-Jun-2025 17:29:38 Europe/Berlin] Login error: Invalid users data
+[07-Jun-2025 17:29:52 Europe/Berlin] Raw input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[07-Jun-2025 17:29:52 Europe/Berlin] Decoded data: Array
+(
+    [email] => ahmed.mo.abubakr@gmail.com
+    [password] => abuBakr&elKhiouty
+)
+
+[07-Jun-2025 17:29:52 Europe/Berlin] Login error: Invalid users data
+[08-Jun-2025 01:50:16 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[08-Jun-2025 01:50:16 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 01:50:16 Europe/Berlin] Users database content: [
+    {
+        "id": 1,
+        "name": "Ahmed Abubakr",
+        "email": "ahmed.mo.abubakr@gmail.com",
+        "password": "$2y$10$t7XNyeZ.JidgSzPzIBYeaucvEmjJAamB2UC8Bng4I2ZX6l/oBp7MC",
+        "role": "admin",
+        "created_at": "2024-03-20 10:00:00",
+        "updated_at": "2024-03-20 10:00:00"
+    }
+] 
+[08-Jun-2025 01:50:16 Europe/Berlin] Password verified successfully for user: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 01:50:16 Europe/Berlin] Generated token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBBYnViYWtyIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5NDI2NjE2fQ.rBuHebbB7163xlLq2v4FIbCAXAV2m2QQH0vJBMEDKwc
+[08-Jun-2025 02:13:13 Europe/Berlin] Received input: {"email":"ahmed.mo.abubakr@gmail.com","password":"abuBakr&elKhiouty"}
+[08-Jun-2025 02:13:13 Europe/Berlin] Attempting login for email: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 02:13:13 Europe/Berlin] Users database content: [
+    {
+        "id": 1,
+        "name": "Ahmed Abubakr",
+        "email": "ahmed.mo.abubakr@gmail.com",
+        "password": "$2y$10$t7XNyeZ.JidgSzPzIBYeaucvEmjJAamB2UC8Bng4I2ZX6l/oBp7MC",
+        "role": "admin",
+        "created_at": "2024-03-20 10:00:00",
+        "updated_at": "2024-03-20 10:00:00"
+    }
+] 
+[08-Jun-2025 02:13:13 Europe/Berlin] Password verified successfully for user: ahmed.mo.abubakr@gmail.com
+[08-Jun-2025 02:13:13 Europe/Berlin] Generated token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhaG1lZC5tby5hYnViYWtyQGdtYWlsLmNvbSIsIm5hbWUiOiJBaG1lZCBBYnViYWtyIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ5NDI3OTkzfQ.T9Cu219drf6RM76j6EM-XcZGgS3TowkGcNX25DCEmZM
+[08-Jun-2025 02:26:45 Europe/Berlin] PHP Warning:  require_once(error_handler.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\cpanel\api\articles.php on line 18
+[08-Jun-2025 02:26:45 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'error_handler.php' (include_path='\xampp\php\PEAR') in C:\xampp\htdocs\cpanel\api\articles.php:18
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\cpanel\api\articles.php on line 18
+[08-Jun-2025 02:26:50 Europe/Berlin] PHP Warning:  require_once(error_handler.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\cpanel\api\articles.php on line 18
+[08-Jun-2025 02:26:50 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'error_handler.php' (include_path='\xampp\php\PEAR') in C:\xampp\htdocs\cpanel\api\articles.php:18
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\cpanel\api\articles.php on line 18
+[08-Jun-2025 02:30:12 Europe/Berlin] PHP Warning:  require_once(error_handler.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\cpanel\api\articles.php on line 18
+[08-Jun-2025 02:30:12 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'error_handler.php' (include_path='\xampp\php\PEAR') in C:\xampp\htdocs\cpanel\api\articles.php:18
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\cpanel\api\articles.php on line 18
+[08-Jun-2025 02:30:41 Europe/Berlin] PHP Warning:  require_once(error_handler.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\cpanel\api\articles.php on line 18
+[08-Jun-2025 02:30:41 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'error_handler.php' (include_path='\xampp\php\PEAR') in C:\xampp\htdocs\cpanel\api\articles.php:18
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\cpanel\api\articles.php on line 18
+[08-Jun-2025 03:29:43 Europe/Berlin] PHP Warning:  Undefined array key "image_url" in C:\xampp\htdocs\cpanel\api\portfolio.php on line 151
